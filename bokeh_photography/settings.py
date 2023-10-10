@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-decant09-bokeh-5uqojukqxd.us2.codeanyapp.com',
-    'https://decant09-bokeh-photo-blog-0c5a394f8c26.herokuapp.com',
+    'decant09-bokeh-photo-blog-0c5a394f8c26.herokuapp.com',
 ]
 
 
