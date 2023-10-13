@@ -2,6 +2,15 @@
     max-width: 1200px;
 }
 
+.navbar-right {
+    justify-content: end;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: end;
+}
+
 /* .image-container {
     position: relative;
     height: 90%;
