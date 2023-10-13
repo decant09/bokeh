@@ -2,15 +2,41 @@
     max-width: 1200px;
 }
 
-.image-container {
+/* .image-container {
     position: relative;
     height: 90%;
+} */
+
+/* to make images appear in squares */
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    height: 90%;
+    padding-bottom: 100%;
+}
+
+/* to make images appear in squares */
+
+.image-container img {
+    position: absolute;
 }
 
 .card-img-top {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.title-link,
+.author-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.title-link:hover,
+.author-link:hover {
+    color: #6c757d;
 }
 
 .github {
