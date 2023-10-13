@@ -28,7 +28,7 @@
     <title>Bokeh</title>
   </head>
   <body class="d-flex flex-column">
-    <header>
+    <header class="mb-3">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
@@ -62,6 +62,15 @@
       </nav>
     </header>
     <main>{% block content %} {% endblock %}</main>
-    <footer></footer>
+    <footer class="footer mt-3 py-3 bg-light">
+      <p class="m-0 text-center fs-5">a website by</p>
+      <p class="m-0 text-center fs-5">Declan Caulfield</p>
+      <p class="m-0 text-center fs-5">
+        <a href="https://github.com/decant09" target="blank" class="github">
+          <i class="fa-brands fa-square-github"></i>
+          <span id="hide">&nbsp;decant09</span>
+        </a>
+      </p>
+    </footer>
   </body>
 </html>
