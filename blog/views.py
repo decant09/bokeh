@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.views import generic, View
 from .models import Post
 
 
@@ -9,3 +9,19 @@ class PostListView(generic.ListView):
     context_object_name = 'posts'
     template_name = "index.html"
     paginate_by = 6
+
+
+class PostDetailView(generic.DetailView):
+
+    def get(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        comments = post.comments.filter(approved=True).order_by('created_on')
+
+        return render(
+            request,
+            'post_detail.html',
+            {
+                'post': post,
+                'comments': comments
+            },
+        )

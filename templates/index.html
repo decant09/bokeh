@@ -12,7 +12,9 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">
-                <a href="#" class="title-link">{{ post.title }}</a>
+                <a href="{% url 'post-detail' post.slug %}" class="title-link"
+                  >{{ post.title }}</a
+                >
               </h5>
               <!-- <h5 class="card-title">{{ post.title }}</h5> -->
               <p class="card-text">
@@ -51,4 +53,4 @@
   </nav>
   {% endif %}
 </div>
-{%endblock%}
+{% endblock %}
