@@ -29,7 +29,8 @@
 }
 
 .title-link,
-.author-link {
+.author-link,
+.page-link {
     text-decoration: none;
     color: inherit;
 }
@@ -37,6 +38,21 @@
 .title-link:hover,
 .author-link:hover {
     color: #6c757d;
+}
+
+.page-link {
+    text-decoration: none;
+    color: #6c757d;
+    border: 1px solid rgba(0, 0, 0, .125);
+}
+
+.page-link:hover {
+    color: inherit;
+    background-color: rgba(0, 0, 0, .125);
+}
+
+.page-link:focus {
+    color: inherit;
 }
 
 .github {

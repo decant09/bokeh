@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <title>Bokeh</title>
   </head>
-  <body class="d-flex flex-column">
+  <body class="d-flex flex-column min-vh-100">
     <header class="mb-3">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -62,7 +62,7 @@
       </nav>
     </header>
     <main>{% block content %} {% endblock %}</main>
-    <footer class="footer mt-3 py-3 bg-light">
+    <footer class="footer mt-auto py-3 bg-light">
       <p class="m-0 text-center fs-5">a website by</p>
       <p class="m-0 text-center fs-5">Declan Caulfield</p>
       <p class="m-0 text-center fs-5">
