@@ -3,11 +3,16 @@ from django.views import generic, View
 from .models import Post
 
 
+def index(request):
+    return render(request, 'index.html')
+
+
 class PostListView(generic.ListView):
     model = Post
     ordering = ['-created_on']
     context_object_name = 'posts'
-    template_name = "index.html"
+    template_name = "post_list.html"
+    # template_name = "index.html"
     paginate_by = 6
 
 

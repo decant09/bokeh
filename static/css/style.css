@@ -84,3 +84,15 @@ a.github {
 .github:hover #hide {
     max-width: 100%;
 }
+
+/* landing page */
+
+.explore-btn {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+}
+
+.explore-btn:hover {
+    background-color: rgba(0, 0, 0, .125)
+}

@@ -1,56 +1,140 @@
-{% extends "base.html" %} {% block content %}
-<div class="container-fluid">
-  <div class="row">
-    <!-- Posts Column -->
-    <div class="col-12 left">
-      <div class="row">
-        {% for post in posts %}
-        <div class="col-md-4 mb-3 mt-3">
-          <div class="card h-100 mb-4">
-            <div class="image-container">
-              <img class="card-img-top" src=" {{ post.image.url }}" />
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">
-                <a href="{% url 'post-detail' post.slug %}" class="title-link"
-                  >{{ post.title }}</a
-                >
-              </h5>
-              <!-- <h5 class="card-title">{{ post.title }}</h5> -->
-              <p class="card-text">
-                <a href="#" class="author-link">{{ post.author }}</a>
-              </p>
-              <!-- <p class="card-text">{{ post.author }}</p> -->
-              <p class="card-text">
-                <small class="text-muted"
-                  >{{ post.created_on|date:'M d, Y' }}</small
-                >
-              </p>
+{% load static %}
+
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/1ed6f98dad.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Bokeh</title>
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="{% static 'images/favicon.ico' %}"
+    />
+  </head>
+
+  <body class="d-flex h-100 text-center text-white bg-white">
+    <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
+      <header class="mb-auto">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a
+              class="navbar-brand"
+              style="font-size: 2rem"
+              href="{% url 'home' %}"
+            >
+              <i class="fa-solid fa-camera-retro"></i> bokeh
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-right" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="{% url 'post-list' %}"
+                    >Feed</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Register</a>
+                </li>
+              </ul>
             </div>
           </div>
+        </nav>
+      </header>
+
+      <!-- <header class="mb-auto">
+        <div>
+          <h3 class="float-md-start mb-0">Cover</h3>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Contact</a>
+          </nav>
         </div>
-        {% endfor %}
-      </div>
+      </header> -->
+
+      <main class="px-3">
+        <div class="pb-3" style="font-size: 2rem">
+          <h1 style="color: rgba(0, 0, 0, 0.9)">
+            What is <i class="fa-solid fa-camera-retro"></i> bokeh?
+          </h1>
+        </div>
+        <div>
+          <p class="lead" style="color: rgba(0, 0, 0, 0.9)">
+            A place for photography enthusiasts to upload, share and learn
+          </p>
+          <p class="lead" style="color: rgba(0, 0, 0, 0.9)">
+            Engage in conversation and find out how those magic moments were
+            captured
+          </p>
+        </div>
+        <div>
+          <p class="lead pt-3">
+            <a
+              href="{% url 'post-list' %}"
+              class="btn btn-lg rounded-0 fw-bold explore-btn"
+              >Explore</a
+            >
+          </p>
+        </div>
+      </main>
+
+      <footer
+        class="footer mt-auto py-3 bg-light"
+        style="color: rgba(0, 0, 0, 0.9)"
+      >
+        <p class="m-0 text-center fs-5">a website by</p>
+        <p class="m-0 text-center fs-5">Declan Caulfield</p>
+        <p class="m-0 text-center fs-5">
+          <a href="https://github.com/decant09" target="blank" class="github">
+            <i class="fa-brands fa-square-github"></i>
+            <span id="hide">&nbsp;decant09</span>
+          </a>
+        </p>
+      </footer>
+
+      <!-- <footer class="mt-auto text-white-50">
+        <p>
+          Cover template for
+          <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>,
+          by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.
+        </p>
+      </footer> -->
     </div>
-  </div>
-  {% if is_paginated %}
-  <nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
-      {% if page_obj.has_previous %}
-      <li>
-        <a href="?page={{ page_obj.previous_page_number }}" class="page-link"
-          >&laquo; PREV
-        </a>
-      </li>
-      {% endif %} {% if page_obj.has_next %}
-      <li>
-        <a href="?page={{ page_obj.next_page_number }}" class="page-link">
-          NEXT &raquo;</a
-        >
-      </li>
-      {% endif %}
-    </ul>
-  </nav>
-  {% endif %}
-</div>
-{% endblock %}
+  </body>
+</html>
