@@ -12,6 +12,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts")
     image = CloudinaryField('image', blank=False)
+    description = models.TextField(null=False)
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:

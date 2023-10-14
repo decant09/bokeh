@@ -1,3 +1,53 @@
 {% extends "base.html" %} {% block content %}
-<h2>Post detail</h2>
+<div class="container">
+  <div class="col-lg-6 col-md-6 mx-auto">
+    <div class="card h100">
+      <div>
+        <img
+          src="{{ post.image.url }}"
+          alt="Image"
+          class="card-img-top"
+          width="100%"
+        />
+      </div>
+      <div class="card-body">
+        <div>
+          <h5 class="card-title">{{ post.title }}</h5>
+        </div>
+        <div>
+          <h6 class="card-text">
+            <a href="#" class="author-link">{{ post.author }}</a>
+          </h6>
+          <p class="card-text">
+            <small class="text-muted"
+              >{{ post.created_on|date:'M d, Y' }}</small
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Description</h5>
+        <p>{{ post.description }}</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <h5 class="card-title">Comments</h5>
+        </div>
+        {% for comment in comments %}
+        <div>
+          <span class="text-muted font-weight-normal">
+            {{ comment.created_on|date:'M d, Y \a\\t P' }}
+          </span>
+          <p class="font-weight-bold">{{ comment.u_name }} wrote:</p>
+          {{ comment.body | linebreaks }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
