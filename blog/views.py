@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
 from django.views import generic, View
 from .models import Post
 from .forms import CommentForm
@@ -13,7 +14,6 @@ class PostListView(generic.ListView):
     ordering = ['-created_on']
     context_object_name = 'posts'
     template_name = "post_list.html"
-    # template_name = "index.html"
     paginate_by = 6
 
 
@@ -44,6 +44,8 @@ class PostDetailView(generic.DetailView):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
+            messages.success(request,
+                             'Comment posted successfully. Awaiting approval.')
         else:
             comment_form = CommentForm()
 
