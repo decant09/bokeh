@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Post
+from .forms import CommentForm
 
 
 def index(request):
@@ -27,6 +28,7 @@ class PostDetailView(generic.DetailView):
             'post_detail.html',
             {
                 'post': post,
-                'comments': comments
+                'comments': comments,
+                "comment_form": CommentForm()
             },
         )
