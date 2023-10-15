@@ -93,16 +93,29 @@ a.github {
     color: #fff;
 }
 
-.explore-btn:hover {
+.explore-btn:hover,
+.explore-btn:active {
     background-color: rgba(0, 0, 0, .125)
 }
 
-/* signup */
-.btn-signup {
+/* allauth */
+.auth-btn {
     background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
 }
 
-.btn-signup:hover {
+.auth-btn:hover,
+.auth-btn:active {
     background-color: rgba(0, 0, 0, .125)
+}
+
+.link {
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #445261;
+    text-decoration: underline;
 }

@@ -13,7 +13,7 @@
         {% blocktrans %}Welcome back to
         <i class="fa-solid fa-camera-retro"></i> bokeh. To leave a comment
         please log in. If you have not created an account yet, then
-        <a class="link" href="{{ signup_url }}">sign up</a> first.
+        <a class="link fw-bold" href="{{ signup_url }}">sign up</a> first.
         <!-- endblocktrans tag -->
         {% endblocktrans %}
       </p>
@@ -30,7 +30,7 @@
         />
         {% endif %}
 
-        <button class="btn fw-bold btn-signup right" type="submit">
+        <button class="btn fw-bold auth-btn right" type="submit">
           {% trans "Sign In" %}
         </button>
       </form>
