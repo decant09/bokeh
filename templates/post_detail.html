@@ -38,7 +38,15 @@
     <div class="card">
       <div class="card-body">
         <div>
-          <h5 class="card-title">Comments</h5>
+          {% with comments.count as total_comments %}
+          <!-- <h5><strong class="text-secondary"> -->
+          <h5 class="card-title">
+            <i class="far fa-comments"></i>
+            {{ total_comments }} Comment{{ total_comments|pluralize }}
+          </h5>
+          {% endwith %}
+
+          <!-- <h5 class="card-title">Comments</h5> -->
         </div>
         {% for comment in comments %}
         <div>
