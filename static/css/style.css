@@ -96,3 +96,13 @@ a.github {
 .explore-btn:hover {
     background-color: rgba(0, 0, 0, .125)
 }
+
+/* signup */
+.btn-signup {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #fff;
+}
+
+.btn-signup:hover {
+    background-color: rgba(0, 0, 0, .125)
+}
