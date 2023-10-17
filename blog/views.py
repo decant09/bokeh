@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.views import generic, View
+from django.contrib.auth.decorators import login_required
 from .models import Post
 from .forms import CommentForm
 
@@ -59,3 +60,8 @@ class PostDetailView(generic.DetailView):
                 "comment_form": CommentForm()
             },
         )
+
+
+@login_required
+def profile(request):
+    return render(request, 'profile.html')
