@@ -1,12 +1,14 @@
 <!-- Base tags-->
 {% extends "base.html" %} {% load i18n %} {% load account socialaccount %}
+<!-- Crispy form tags -->
+{% load crispy_forms_tags %}
 <!-- Title tags -->
 {% block head_title %}{% trans "Sign In" %}{% endblock head_title %}
 <!-- Block content-->
 {% block content %}
 <div class="container">
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
       <h3>{% trans "Sign In" %}</h3>
 
       <p>
@@ -19,10 +21,10 @@
       </p>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
       <form class="login" method="POST" action="{% url 'account_login' %}">
-        {% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
+        {% csrf_token %} {{ form|crispy }} {% if redirect_field_value %}
         <input
           type="hidden"
           name="{{ redirect_field_name }}"
