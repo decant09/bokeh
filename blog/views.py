@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.views import generic, View
 from django.contrib.auth.decorators import login_required
-from .models import Post
+from .models import Post, Profile
 from .forms import CommentForm
 
 
@@ -64,4 +64,5 @@ class PostDetailView(generic.DetailView):
 
 @login_required
 def profile(request):
-    return render(request, 'profile.html')
+    profile = Profile.objects.get(user=request.user)
+    return render(request, 'profile.html', {'profile': profile})

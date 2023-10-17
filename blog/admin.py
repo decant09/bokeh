@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Comment, Profile
 
 # Register your models here.
 
@@ -16,3 +16,8 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
+
+
+@admin.register(Profile)
+class Profile(admin.ModelAdmin):
+    search_fields = ('user',)
