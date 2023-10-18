@@ -119,3 +119,10 @@ a.github {
     color: #445261;
     text-decoration: underline;
 }
+
+
+/* profile image */
+.profile-img {
+    height: 250px;
+    width: 250px;
+}
