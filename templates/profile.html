@@ -1,4 +1,8 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+<!-- Crispy form tags -->
+{% load crispy_forms_tags %}
+<!-- block tag -->
+{% block content %}
 <div class="container-fluid mt-3">
   <h3 class="mb-3">{{ user.username }}</h3>
   <div>
@@ -15,5 +19,31 @@
     <h5 class="mt-3">About:</h5>
     <p>{{ profile.about_user }}</p>
   </div>
+  <div>
+    <div class="row col-md-6">
+      <form
+        class="signup"
+        id="signup_form"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %}
+        <!-- edit user -->
+        {{ edit_user|crispy }}
+        <!-- edit profile -->
+        {{ edit_profile|crispy }} {% if redirect_field_value %}
+        <input
+          type="hidden"
+          name="{{ redirect_field_name }}"
+          value="{{ redirect_field_value }}"
+        />
+        {% endif %}
+        <button class="btn mt-1 fw-bold auth-btn right" type="submit">
+          Update
+        </button>
+      </form>
+    </div>
+  </div>
 </div>
+
 {% endblock %}
