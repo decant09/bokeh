@@ -122,7 +122,13 @@ a.github {
 
 
 /* profile image */
+
 .profile-img {
     height: 250px;
     width: 250px;
+}
+
+.post-profile-img {
+    height: 60px;
+    width: 60px;
 }
