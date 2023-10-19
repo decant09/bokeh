@@ -20,11 +20,17 @@
                 <div class="card-body">
                   <div class="row no-gutters">
                     <div class="col-3 px-0">
+                      {% if "placeholder" in post.author.profile.image.url %}
                       <img
                         class="card-img-top rounded-circle post-profile-img"
-                        alt="Profile Picture"
+                        src="https://res.cloudinary.com/dfsv2olye/image/upload/v1697560113/default_profile_mjdh7j.png"
+                      />
+                      {% else %}
+                      <img
+                        class="card-img-top rounded-circle post-profile-img"
                         src="{{ post.author.profile.image.url }}"
                       />
+                      {% endif %}
                     </div>
                     <div class="col-9 ml-md-auto">
                       <h5 class="card-title">{{ post.author }}</h5>
