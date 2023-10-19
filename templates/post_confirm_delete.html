@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <h5>Are you sure you want to delete the post "{{ post.title }}"</h5>
+      <p>You are about to delete this post, this cannot be undone.</p>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-3">
+      <a
+        href="{% url 'post-detail' post.slug %}"
+        class="btn fw-bold mb-3 auth-btn"
+        >No, Back to Post</a
+      >
+      <form method="post">
+        {% csrf_token %}
+        <button class="btn fw-bold btn-outline-danger" type="submit">
+          Yes, Delete
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

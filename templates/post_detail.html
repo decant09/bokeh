@@ -43,7 +43,9 @@
               <a href="{% url 'post-edit' post.slug %}" class="title-link"
                 ><i class="far fa-edit"></i
               ></a>
-              <a href="#" class="title-link"><i class="fa fa-trash"></i></a>
+              <a href="{% url 'post-delete' post.slug %}" class="title-link"
+                ><i class="fa fa-trash"></i
+              ></a>
               {% endif %}
             </h5>
           </div>
