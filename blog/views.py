@@ -2,8 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.views import generic, View
 from django.contrib.auth.decorators import login_required
+from django.utils.text import slugify
 from .models import Post, Profile
-from .forms import CommentForm, EditUserForm, EditProfileForm
+from .forms import CommentForm, EditUserForm, EditProfileForm, PostForm
 
 
 def index(request):
@@ -16,6 +17,27 @@ class PostListView(generic.ListView):
     context_object_name = 'posts'
     template_name = "post_list.html"
     paginate_by = 6
+
+
+@login_required
+def create_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST,
+                        request.FILES
+                        )
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.slug = slugify(post.title)
+            post.save()
+            messages.success(
+                request,
+                'Thanks for contributing. Your post was created successfully'
+            )
+            return redirect('post-detail', slug=post.slug)
+    else:
+        form = PostForm()
+    return render(request, 'post_form.html', {'form': form})
 
 
 class PostDetailView(generic.DetailView):
