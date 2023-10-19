@@ -38,14 +38,12 @@
 }
 
 .title-link,
-.author-link,
 .page-link {
     text-decoration: none;
     color: inherit;
 }
 
-.title-link:hover,
-.author-link:hover {
+.title-link:hover {
     color: #6c757d;
 }
 

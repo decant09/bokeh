@@ -1,8 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.views import generic, View
+from django.views.generic.edit import UpdateView
 from django.contrib.auth.decorators import login_required
 from django.utils.text import slugify
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from .models import Post, Profile
 from .forms import CommentForm, EditUserForm, EditProfileForm, PostForm
 
@@ -38,6 +41,29 @@ def create_post(request):
     else:
         form = PostForm()
     return render(request, 'post_form.html', {'form': form})
+
+
+# new
+class PostEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Post
+    fields = ['title', 'description', 'image']
+    template_name = 'post_edit.html'
+
+    def get_success_url(self):
+        slug = self.kwargs['slug']
+        return reverse_lazy('post-detail', kwargs={'slug': slug})
+
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(
+            self.request,
+            'Your post was updated successfully'
+        )
+        return response
 
 
 class PostDetailView(generic.DetailView):

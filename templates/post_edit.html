@@ -1,0 +1,32 @@
+<!-- Base tags-->
+{% extends "base.html" %}
+<!-- Crispy form tags -->
+{% load crispy_forms_tags %}
+<!-- Block content-->
+{% block content %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <a
+        href="{% url 'post-detail' post.slug %}"
+        class="btn fw-bold mb-3 auth-btn"
+        >Back to Post</a
+      >
+      <h3>Update your post</h3>
+      <p>
+        Use the form below to update your post. Remember to upload an image,
+        include a title, and a description. Thank You!
+      </p>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-3">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{ form|crispy }}
+        <button type="submit" class="btn fw-bold mt-2 auth-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
