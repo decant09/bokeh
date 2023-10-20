@@ -11,11 +11,26 @@
               <img class="card-img-top" src=" {{ post.image.url }}" />
             </div>
             <div class="card-body">
-              <h5 class="card-title">
-                <a href="{% url 'post-detail' post.slug %}" class="title-link"
-                  >{{ post.title }}</a
-                >
-              </h5>
+              <div class="d-flex justify-content-between">
+                <div class="card-title">
+                  <h5>
+                    <a
+                      href="{% url 'post-detail' post.slug %}"
+                      class="title-link"
+                      >{{ post.title }}</a
+                    >
+                  </h5>
+                </div>
+                <div>
+                  {% with post.comments.count as total_comments %}
+                  <h5><a href="{% url 'post-detail' post.slug %}"
+                    class="title-link">
+                    <i class="far fa-comments"></i>
+                    {{ total_comments }}</a></h5>
+                  </h5>
+                </div>
+              </div>
+              {% endwith %}
               <div class="card border-0">
                 <div class="card-body">
                   <div class="row no-gutters">
