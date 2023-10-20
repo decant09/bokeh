@@ -157,11 +157,29 @@
       </p>
     </footer>
     <script>
-      setTimeout(function () {
-        let messages = document.getElementById("msg");
-        let alert = new bootstrap.Alert(messages);
-        alert.close();
-      }, 3000);
+        // messages timeout
+        setTimeout(function () {
+            let messages = document.getElementById("msg");
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 3000);
+
+        // image modal
+        function enlargeImage(img) {
+            var modal = document.getElementById("modal");
+            var modalImage = document.getElementById("modal-image");
+
+
+            modal.style.display = "block";
+            modalImage.src = img.src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("modal");
+
+
+            modal.style.display = "none";
+        }
     </script>
   </body>
 </html>
