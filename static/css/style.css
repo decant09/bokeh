@@ -130,3 +130,7 @@ a.github {
     height: 60px;
     width: 60px;
 }
+
+.profile-img-space {
+    padding-left: 10px !important;
+}
