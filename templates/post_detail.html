@@ -13,21 +13,6 @@
           width="100%"
         />
       </div>
-      <!-- <div class="card-body">
-        <div>
-          <h5 class="card-title">{{ post.title }}</h5>
-        </div>
-        <div>
-          <h6 class="card-text">
-            <a href="#" class="author-link">{{ post.author }}</a>
-          </h6>
-          <p class="card-text">
-            <small class="text-muted"
-              >{{ post.created_on|date:'M d, Y' }}</small
-            >
-          </p>
-        </div>
-      </div> -->
       <div class="card-body">
         <div class="d-flex bd-highlight">
           <div class="flex-grow-1 bd-highlight">
@@ -40,7 +25,10 @@
           <div class="bd-highlight">
             <h5>
               {% if request.user == post.author %}
-              <a href="{% url 'post-edit' post.slug %}" class="title-link"
+              <a
+                style="padding-right: 10px"
+                href="{% url 'post-edit' post.slug %}"
+                class="title-link"
                 ><i class="far fa-edit"></i
               ></a>
               <a href="{% url 'post-delete' post.slug %}" class="title-link"
@@ -90,14 +78,11 @@
       <div class="card-body">
         <div>
           {% with comments.count as total_comments %}
-          <!-- <h5><strong class="text-secondary"> -->
           <h5 class="card-title">
             <i class="far fa-comments"></i>
             {{ total_comments }} Comment{{ total_comments|pluralize }}
           </h5>
           {% endwith %}
-
-          <!-- <h5 class="card-title">Comments</h5> -->
         </div>
         {% for comment in comments %}
         <div class="card my-3">
