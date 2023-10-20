@@ -16,11 +16,7 @@
       <div class="card-body">
         <div class="d-flex bd-highlight">
           <div class="flex-grow-1 bd-highlight">
-            <h5 class="card-title">
-              <a href="{% url 'post-detail' post.slug %}" class="title-link"
-                >{{ post.title }}</a
-              >
-            </h5>
+            <h5 class="card-title">{{ post.title }}</h5>
           </div>
           <div class="bd-highlight">
             <h5>
@@ -38,6 +34,7 @@
             </h5>
           </div>
         </div>
+        <br />
         <div class="card border-0">
           <div class="d-flex justify-content-start">
             <div>
@@ -55,7 +52,12 @@
             </div>
             <div style="padding-left: 10px">
               <p class="card-title">
-                <strong>{{ post.author }}</strong>
+                <a
+                  class="title-link"
+                  href="{% url 'user-post-list' post.author.username %}"
+                >
+                  <strong>{{ post.author }}</strong>
+                </a>
               </p>
               <p class="card-text">
                 <small class="text-muted"

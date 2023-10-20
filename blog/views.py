@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.text import slugify
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
+from django.contrib.auth.models import User
 from .models import Post, Profile, Comment
 from .forms import CommentForm, EditUserForm, EditProfileForm, PostForm
 
@@ -20,6 +21,18 @@ class PostListView(generic.ListView):
     context_object_name = 'posts'
     template_name = "post_list.html"
     paginate_by = 6
+
+
+class UserPostListView(generic.ListView):
+    model = Post
+    ordering = ['-created_on']
+    context_object_name = 'posts'
+    template_name = "user_post_list.html"
+    paginate_by = 6
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Post.objects.filter(author=user).order_by('-created_on')
 
 
 @login_required
