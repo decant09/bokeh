@@ -68,7 +68,10 @@ class PostEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     template_name = 'post_confirm_delete.html'
-    success_url = reverse_lazy('post-list')
+
+    def get_success_url(self):
+        messages.success(self.request, "Your post was deleted successfully")
+        return reverse_lazy('post-list')
 
     def test_func(self):
         post = self.get_object()
@@ -125,6 +128,7 @@ class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def get_success_url(self):
         slug = self.kwargs['slug']
+        messages.success(self.request, "Your comment was deleted successfully")
         return reverse_lazy('post-detail', kwargs={'slug': slug})
 
     def test_func(self):
