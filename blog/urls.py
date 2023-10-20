@@ -4,7 +4,8 @@ from .views import (
     PostDetailView,
     create_post,
     PostEditView,
-    PostDeleteView
+    PostDeleteView,
+    CommentDeleteView
 )
 from . import views
 
@@ -18,4 +19,6 @@ urlpatterns = [
     path('post/edit/<slug:slug>/', PostEditView.as_view(), name='post-edit'),
     path('post/delete/<slug:slug>/', PostDeleteView.as_view(),
          name='post-delete'),
+    path('post/<slug:slug>/comment/delete/<int:pk>/',
+         CommentDeleteView.as_view(), name='comment-delete'),
 ]

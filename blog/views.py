@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.text import slugify
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
-from .models import Post, Profile
+from .models import Post, Profile, Comment
 from .forms import CommentForm, EditUserForm, EditProfileForm, PostForm
 
 
@@ -117,6 +117,19 @@ class PostDetailView(generic.DetailView):
                 "comment_form": CommentForm()
             },
         )
+
+
+class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Comment
+    template_name = 'comment_confirm_delete.html'
+
+    def get_success_url(self):
+        slug = self.kwargs['slug']
+        return reverse_lazy('post-detail', kwargs={'slug': slug})
+
+    def test_func(self):
+        comment = self.get_object()
+        return self.request.user == comment.u_name
 
 
 @login_required
