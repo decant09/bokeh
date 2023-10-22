@@ -26,6 +26,9 @@ To visit the live link to bokeh on Heroku click [here](#).
 - [Technologies Used](#technologies-used)
     - [Languages](#languages)
     - [Frameworks](#frameworks)
+    - [Database](#database)
+    - [Libraries and Packages](#libraries-and-packages)
+    - [Programs](#programs)
 - [Testing](#testing)
     - [W3C Validator](#w3c-validator)
         - [HTML](#html)
@@ -43,7 +46,7 @@ To visit the live link to bokeh on Heroku click [here](#).
     - [Bugs](#bugs)
         - [Known](#known)
         - [Solved](#solved)
-- [Deployment & Local Development](#deployment--local-development)
+- [Deployment and Local Development](#deployment-and-local-development)
     - [Deployment](#deployment)
     - [Local Development](#local-development)
         - [How to Fork](#how-to-fork)
@@ -176,24 +179,37 @@ time of submission.
 - JavaScript
 - Python3
 ### Frameworks
-- Git
-    - Used for version control by utilising the Gitpod and Codeanywhere terminals to commit to Git and push to GitHub.
-- GitHub
-    - Used to store the code of the project after being pushed from Git.
-- [Heroku](https://www.heroku.com/)
-    - Used to deploy the project.
 - [Django 3.2.22](https://www.djangoproject.com/)
     - Python web framework used to develop the website.
 - [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
     - Responsive CSS framework used to develop the website.
+### Database
+- [ElephantSQL](https://www.elephantsql.com/)
+    - Used to host the PostgreSQL database.
+### Libraries and Packages
 - [Django Allauth](https://pypi.org/project/django-allauth/)
     - Used for the authentication system.
 - [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
     - Used to control the rendering behaviour of forms.
-- [ElephantSQL](https://www.elephantsql.com/)
-    - Used to host the PostgreSQL database.
+- [Gunicorn](https://pypi.org/project/gunicorn/)
+    - Python WSGI HTTP Server.
+- [Psycopg2](https://pypi.org/project/psycopg2/)
+    - Python-PostgreSQL Database Adapter.
 - [Cloudinary](https://cloudinary.com/)
     - Cloud based image management system used for managing the images.
+### Programs
+- [Jinja](https://jinja.palletsprojects.com/en/3.1.x/)
+    - Templating engine to allow writing code similar to Python syntax.
+- [Heroku](https://www.heroku.com/)
+    - Used to deploy the project.
+- Git
+    - Used for version control by utilising the Gitpod and Codeanywhere terminals to commit to Git and push to GitHub.
+- GitHub
+    - Used to store the code of the project after being pushed from Git.
+- [Icons8](https://icons8.com/icons/set/camera-favicon).
+    - Used to obtain the browser icon to be displayed in the browser tab.
+- [Convertico](https://convertico.com/).
+    - Used to convert a png file to ico file for the favicon.
 - [Balsamiq](https://balsamiq.com/)
     - Used to generate the wireframes for the design of the website.
 - [Font Awesome](https://fontawesome.com/)
@@ -202,10 +218,8 @@ time of submission.
     - Used for responsiveness investigations, isolating code, troubleshooting, and testing features.
 - [Am I Responsive]()
     - Used to show responsiveness across different device sizes.
-- [Favicon](https://icons8.com/icons/set/camera-favicon).
-    - Used to obtain the browser icon to be displayed in the browser tab.
-- [Convertico](https://convertico.com/).
-    - Used to convert a png file to ico file for the favicon.
+- [Pip](https://pypi.org/project/pip/)
+    - For installing python packages
 ## Testing
 
 ### W3C Validator
@@ -308,7 +322,7 @@ Google Lighthouse was used to test for accessibility for each page.
 ### Manual
 - I used Google Dev Tools to test for screen responsiveness.  
 ![]()  
-- I tested on different browsers (chrome, firefox, safari & edge) to ensure the website performs as expected across all of these.
+- I tested on different browsers (chrome, firefox, safari and edge) to ensure the website performs as expected across all of these.
 - I tested on Android and iPhone devices.
 - I tested all the buttons and answer fields on the website manually to ensure that they all work as expected. Upon hovering over
 them the desired effect is realised. The main buttons redirect appropriately to the website areas they are linked to. The answer
@@ -371,7 +385,7 @@ fields behave as intended.
 - I was having misleading logout messages appear on the landing page. This was because my landing page is a standalone page which does not use the base template. I had not included the messages code from the base template on the index page (landing page). I was able to solve this by reading the thread on [GitHub](https://github.com/pennersr/django-allauth/issues/2031
 ).
 
-## Deployment & Local Development
+## Deployment and Local Development
 ### Deployment
 The site was deployed to Heroku pages and the following steps were followed to do so:
 
