@@ -2,6 +2,8 @@
     max-width: 1200px;
 }
 
+/* navbar */
+
 .navbar-right {
     justify-content: end;
 }
@@ -10,11 +12,6 @@
     display: flex;
     justify-content: end;
 }
-
-/* .image-container {
-    position: relative;
-    height: 90%;
-} */
 
 /* to make images appear in squares */
 
@@ -25,17 +22,19 @@
     padding-bottom: 100%;
 }
 
-/* to make images appear in squares */
-
 .image-container img {
     position: absolute;
 }
+
+/* images */
 
 .card-img-top {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
+/* links */
 
 .title-link,
 .page-link {
@@ -61,6 +60,8 @@
 .page-link:focus {
     color: inherit;
 }
+
+/* github icon */
 
 .github {
     text-decoration: none;
@@ -97,6 +98,7 @@ a.github {
 }
 
 /* allauth */
+
 .auth-btn {
     background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
@@ -118,7 +120,6 @@ a.github {
     text-decoration: underline;
 }
 
-
 /* profile image */
 
 .profile-img {
@@ -132,6 +133,7 @@ a.github {
 }
 
 /* image modal */
+
 #modal {
     display: none;
     position: fixed;
