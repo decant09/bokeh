@@ -104,13 +104,59 @@ I used a soft green colour to highlight the messages that are displayed to the u
 #### Typography
 I chose to use the default font supplied with Bootstrap as I found it to be simple and geometrically attractive. I wanted a simple font where readability was a strong characteristic. I didn't want to use a font that overly styled so as not to detract from the photography posts.  
 #### Wireframes
-Wireframes were created for the website layout. The layout is the same across different device screen sizes.
-- Landing Page  
-![]()  
-- Feed Page  
-![]()  
-- Post Detail Page  
-![]()  
+Wireframes were created for the website layout. The layout is the same across different device screen sizes with the exception of the post list page. On small screen sizes the posts are in displayed in a single column as opposed to three columns on larger devices. The navigation links are also compressed into a dropdown menu on small screen sizes. I have included a mobile wireframe to show these representations.
+<details>
+<summary>Landing Page</summary>
+<img src="static/images/readme/wireframes/landing_page.png">
+</details>
+<details>
+<summary>Post List Page</summary>
+<img src="static/images/readme/wireframes/post_list_page.png">
+</details>
+<details>
+<summary>Post List Page Mobile</summary>
+<img src="static/images/readme/wireframes/post_list_page_mobile.png">
+</details>
+<details>
+<summary>Post Detail Page</summary>
+<img src="static/images/readme/wireframes/post_detail_page.png">
+</details>
+<details>
+<summary>Profile Page</summary>
+<img src="static/images/readme/wireframes/profile_page.png">
+</details>
+<details>
+<summary>Create Post Page</summary>
+<img src="static/images/readme/wireframes/create_post_page.png">
+</details>
+<details>
+<summary>Post Delete Page</summary>
+<img src="static/images/readme/wireframes/post_delete_page.png">
+</details>
+<details>
+<summary>Comment Delete Page</summary>
+<img src="static/images/readme/wireframes/comment_delete_page.png">
+</details>
+<details>
+<summary>Update Post Page</summary>
+<img src="static/images/readme/wireframes/update_post_page.png">
+</details>
+<details>
+<summary>User Post List Page</summary>
+<img src="static/images/readme/wireframes/user_post_list_page.png">
+</details>
+<details>
+<summary>Signup Page</summary>
+<img src="static/images/readme/wireframes/register_page.png">
+</details>
+<details>
+<summary>Login Page</summary>
+<img src="static/images/readme/wireframes/signin_page.png">
+</details>
+<details>
+<summary>Logout Page</summary>
+<img src="static/images/readme/wireframes/landing_page.png">
+</details>  
 
 ## Features
 - The website is made up of three pages, the home page, the quiz page, and the quiz over page. The home page contains a start
