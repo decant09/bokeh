@@ -7,12 +7,11 @@
         {% for post in posts %}
         <div class="col-md-4 mb-3 mt-3">
           <div class="card h-100 mb-4">
-            <div id="modal" onclick="closeModal()">
-                <img id="modal-image" />
-            </div>
-            <div class="image-container" style="cursor: pointer;">
-              <img src="{{ post.image.url }}" onclick="enlargeImage(this)"
-               alt="Image" class="card-img-top" width="100%" />
+            <div class="image-container">
+              <a href="{% url 'post-detail' post.slug %}">
+                <img src="{{ post.image.url }}"
+                  alt="Image" class="card-img-top" width="100%" />
+                </a>
             </div>
             <div class="card-body">
               <div class="d-flex justify-content-between">

@@ -5,12 +5,17 @@
 <div class="container">
   <div class="col-lg-6 col-md-6 mx-auto">
     <div class="card h100">
+      <div id="modal" onclick="closeModal()">
+        <img id="modal-image" />
+      </div>
       <div>
         <img
           src="{{ post.image.url }}"
+          onclick="enlargeImage(this)"
           alt="Image"
           class="card-img-top"
           width="100%"
+          style="cursor: pointer"
         />
       </div>
       <div class="card-body">
