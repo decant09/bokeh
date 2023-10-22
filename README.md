@@ -1,11 +1,9 @@
 # Bokeh Photography Blog
-<!-- Learn the Lingo Quiz is a quiz based learning modality for users to test their knowledge of the local tongue. It is a quiz based
-game whereby you are presented with a phrase, or term, with four possible answers to choose from. It is aimed at people who are
-interested in the fun of linguistics and want to learn the local lingo. -->
+What is  bokeh? A place for photography enthusiasts to upload, share and learn. Engage in conversation and find out how those magic moments were captured.
 
 ![](/docs/testing/am_i_responsive.png)  
 
-To visit the live link to bokeh on Heroku click [here](#).  
+To visit the live link to bokeh on Heroku click [here](https://decant09-bokeh-photo-blog-0c5a394f8c26.herokuapp.com/).  
 
 ## Contents
 - [User Experience](#user-experience)
@@ -60,7 +58,7 @@ To visit the live link to bokeh on Heroku click [here](#).
 ### Initial Discussion
 This website was created for a project submission to Code Institute for the Diploma in Full Stack Software Development
 (E-commerce Applications). The criteria for the submission were primarily that it be created using the Bootstrap and Django
-frameworks. It was also required to have create, read, update and delete (CRUD) funtionality for users who visit the website. We were presented with a few website formats to choose from and of these I chose a blog based format. I chose a photography based blog format as I have an interest in photography and having a website where users can share their expertise was one that appealed to me. Learning the basics of photography is a challenge and having a forum to pick up some tips from others with greater experience would be a great resource. The aim was to develop a blog that will either help people to have some fun or help to improve their understanding of photography.  
+frameworks. It was also required to have create, read, update and delete (CRUD) funtionality for users who visit the website. We were presented with a few website formats to choose from and of these I chose a blog based format. I chose a photography based blog format as I have an interest in photography and having a website where users can share their expertise was one that appealed to me. Learning the basics of photography is a challenge and having a forum to pick up some tips from others with greater experience would be a great resource. The aim was to develop a blog that will either help people to have some fun or help to improve their understanding of photography. I chose to call it bokeh as it is a popular subject in photography.  
 
 ### User Stories
 #### First Time Visitor Goals
@@ -114,6 +112,10 @@ Wireframes were created for the website layout. The layout is the same across di
 <img src="static/images/readme/wireframes/post_list_page.png">
 </details>
 <details>
+<summary>User Post List Page</summary>
+<img src="static/images/readme/wireframes/user_post_list_page.png">
+</details>
+<details>
 <summary>Post List Page Mobile</summary>
 <img src="static/images/readme/wireframes/post_list_page_mobile.png">
 </details>
@@ -130,20 +132,16 @@ Wireframes were created for the website layout. The layout is the same across di
 <img src="static/images/readme/wireframes/create_post_page.png">
 </details>
 <details>
-<summary>Post Delete Page</summary>
-<img src="static/images/readme/wireframes/post_delete_page.png">
-</details>
-<details>
-<summary>Comment Delete Page</summary>
-<img src="static/images/readme/wireframes/comment_delete_page.png">
-</details>
-<details>
 <summary>Update Post Page</summary>
 <img src="static/images/readme/wireframes/update_post_page.png">
 </details>
 <details>
-<summary>User Post List Page</summary>
-<img src="static/images/readme/wireframes/user_post_list_page.png">
+<summary>Delete Post Page</summary>
+<img src="static/images/readme/wireframes/delete_post_page.png">
+</details>
+<details>
+<summary>Comment Delete Page</summary>
+<img src="static/images/readme/wireframes/comment_delete_page.png">
 </details>
 <details>
 <summary>Signup Page</summary>
@@ -159,56 +157,42 @@ Wireframes were created for the website layout. The layout is the same across di
 </details>  
 
 ## Features
-- The website is made up of three pages, the home page, the quiz page, and the quiz over page. The home page contains a start
-button, that takes you to the quiz itself, and a rules button, that shows the rules in a modal. When the quiz is complete, the quiz
-over page is automatically opened. This page contains buttons to navigate back to the home page or to the quiz page again.
-### Home Page  
-- The home page displays the title of the website clearly.
-- Below this, there is a brief introduction to the website and an invitation to take the quiz.
-- Below the introduction, there is a button labelled "start" that when clicked takes you to the quiz page.
-- Below the start button, there is a button labelled "rules". When clicked, a modal appears with the rules. The main background behind
-the modal darkens making the modal the focus of the page when open. The modal has a close button that when clicked closes the modal.
-Clicking any area outside the modal will also close it.
-- The buttons are styled with a box shadow to make them stand out as buttons. There is a hover effect applied that changes the cursor
-to a pointer and makes the button pop up a fraction. This gives the appearance of it moving in a 3D direction out of the screen.
-- There is a dark mode toggle icon to allow the user to change between the default light mode to dark mode. This is displayed on each
-of the pages of the website.  
-![](/docs/website_screenshots/home_page.png)  
-![](/docs/website_screenshots/home_page_rules_modal.png)  
-### Quiz Page
-- The quiz page is made up of a quiz area with a shadow effect border applied.
-- Within this area, there are three main components, the quiz head, the question display, and the associated answers options.
-- The quiz head, located at the top, contains a question count to the left and a score count to the right.
-- The question counter contains two numbers separated by a forward slash. These are placed under the heading labelled "question".
-The first number is a number between 1 and 5 and is assigned depending on what question number point the user is at in the quiz.
-The second number is 5 and corresponds to the total amount of questions in the quiz. This shows the user that there are 5 questions
-in total and how far they have progressed. When the page is loaded the question counter displays 1/5.
-- The score counter is placed under the heading labelled "score". It starts at 0 and increments by 20 as questions are answered
-correctly.
-- The question area displays the new question each time it is prompted to, this being when the page is loaded and when an answer
-option has been clicked.  
-![](/docs/website_screenshots/quiz_page.png)  
-- Each question has its associated answers displayed below it. There are 4 possible answer choices of which only one is right. A
-hover effect is applied to the areas containing the answers. This results in the cursor changing to a pointer and the colour scheme
-of the area changing.  
-![](/docs/website_screenshots/quiz_page_hover.png)  
-- Once an answer option is chosen and clicked on the background colour changes to green if the answer selected is correct, and red if
-incorrect. There is a brief delay applied before the next question is automatically displayed.  
-![](/docs/website_screenshots/quiz_page_green.png)  
-![](/docs/website_screenshots/quiz_page_red.png)  
-- The quiz is complete once 5 questions have been answered prompting the quiz over page to be displayed.  
+The website is composed primarily of four main pages, the landing page, the post list pages, the post detail page and the profile page. To allow users to interact with the website there are links to the pages that allow users to post content, update or delete content, post comments and delete comments. In addition there are also authorization pages to allow users to register, login and logout. As the website is built using the Django framework there is an admin page which authorized users can access.  
+### Landing Page  
+- The home page contains a navigation bar at the top of the page which contains the website logo and navigation links. The navigation links are compressed into a dropdown menu on mobile devices.
+- There is a footer which credits myself as the designer of the website and a link to my GitHub profile.
+- The navigation bar and footer are features which are carried across all areas of the website.
+- The main body of the landing page contains a brief statement as to what the purpose of the website is and below this there is a call to action button labeled "Explore" which takes you to the feed, also known as the post list page.  
+<details>
+<summary>Landing Page</summary>
+<img src="static/images/readme/screenshots/landing_page.png">
+</details>
+<details>
+<summary>Navigation Bar Dropdown on Mobile</summary>
+<img src="static/images/readme/screenshots/navbar_dropdown.jpg">
+</details>
 
-### Quiz Over Page
-- This page shows the user's score result with a message displayed beneath.
-- The message displayed depends on the score achieved. There are three possible messages, one for achieving a result of 100/100, one
-for over 50/100 but less than 100, and finally one for all other results, in other words results less than 50/100.
-- There are two buttons displayed underneath stacked on top of each other. They have the same styling and hover effect applied to
-them as the start button on the home page.
-- The first button is labelled "try again" and when clicked takes you to the start of the quiz again.
-- The second button is labelled "home" and when clicked takes you to the home page.  
-![](/docs/website_screenshots/quiz_over_page_100_msg.png)  
-![](/docs/website_screenshots/quiz_over_page_o50_msg.png)  
-![](/docs/website_screenshots/quiz_over_page_u50_msg.png)  
+### Post List Page
+
+### User Post List Page
+
+### Post Detail Page
+
+### Profile Page
+
+### Create Post Page
+
+### Update Post Page
+
+### Delete Post Page
+
+### Comment Post Page
+
+### Signup Page
+
+### Login Page
+
+### Logout Page
 
 ### Future Features
 - The website is based on the Scottish linguistic variation of English, as well as its regional dialects. However, on a similar
@@ -476,6 +460,8 @@ The steps below describe how to fork or clone the repository if desired.
 - For help creating a landing page and with the views.py and url.py code I referred to [DEV](https://dev.to/hmlon/creating-a-landing-page-in-django-20pg).
 - To get the comment count to display I referred to Nutan on [Medium]().
 - To help create the user profile model I referred to [PythonTutorial](https://www.pythontutorial.net/django-tutorial/django-user-profile/)
+- How to add a dropdown in markdown on [DEV](https://dev.to/asyraf/how-to-add-dropdown-in-markdown-o78).
+- I referred to Code Institute "I think therefore I blog" walkthrough material to help me complete this project.
 - I referred to the Pic Pals project by fellow Code Institute student Jamie King on [GitHub](https://github.com/jkingportfolio/CI_PP4_Pic_Pals/tree/main) as inspiration for some of the features and layout of my website.
 
 ### Acknowledgements
