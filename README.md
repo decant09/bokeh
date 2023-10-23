@@ -27,7 +27,7 @@ To visit the live link to bokeh on Heroku click [here](https://decant09-bokeh-ph
     - [Create Post Page](#create-post-page)
     - [Update Post Page](#update-post-page)
     - [Delete Post Page](#delete-post-page)
-    - [Comment Post Page](#comment-post-page)
+    - [Post Comments and Comment Form](#post-comments-and-comment-form)
     - [Signup Page](#signup-page)
     - [Login Page](#login-page)
     - [Logout Page](#logout-page)
@@ -171,6 +171,7 @@ Wireframes were created for the website layout. The layout is the same across di
 The website is composed primarily of four main pages, the landing page, the post list pages, the post detail page and the profile page. To allow users to interact with the website there are links to the pages that allow users to post content, update or delete content, post comments and delete comments. In addition there are also authorization pages to allow users to register, login and logout. As the website is built using the Django framework there is an admin page which authorized users can access.  
 ### Landing Page  
 - The home page contains a navigation bar at the top of the page which contains the website logo and navigation links. The navigation links are compressed into a dropdown menu on mobile devices.
+- The navigation links change depending on whether a user is logged in.
 - There is a footer which credits myself as the designer of the website and a link to my GitHub profile.
 - The navigation bar and footer are features which are carried across all areas of the website.
 - The main body of the landing page contains a brief statement as to what the purpose of the website is and below this there is a call to action button labeled "Explore" which takes you to the feed, also known as the post list page.  
@@ -182,9 +183,14 @@ The website is composed primarily of four main pages, the landing page, the post
     <summary>Navigation Bar Dropdown on Mobile</summary>
     <img src="static/images/readme/screenshots/navbar_dropdown.jpg">
     </details>
+    <details>
+    <summary>Navigation Bar Logged in</summary>
+    <img src="static/images/readme/screenshots/navbar_logged_in.jpg">
+    </details>
 
 ### Post List Page
 - The post list page, or feed page, contains the posts made to the website by users.
+- This page is accessible whether or not you are logged in
 - Ths posts are displayed in rows of three posts per row.
 - This page is paginated so that six posts are displayed per page resulting in two rows with three posts on each.
 - The most recent post to the website is displayed at the top left of this structure and are chronological thereafter.
@@ -192,7 +198,7 @@ The website is composed primarily of four main pages, the landing page, the post
 - The user can access the different pages by clicking on the "next" or "prev" buttons beneath the group of six posts. The "next" button appears depending on whether or not there are enough posts to populate a new page.
 - Each post is presented in a card like format, the main body of which is the image.
 - Beneath the image there is an area that displays the post title along with a comments icons displaying the number of comments on the post.
-- Beneath this the username of the user who posted, along with their image is displayed.
+- Beneath this the username of the user who posted is displayed, along with their image, if one was uploaded to their profil and a default image if not.
 - The date posted is also displayed.
 - Clicking on the image, the title or the comments icon takes you to the post detail page.
 - Clicking on the username takes you the page displaying all posts by that user.
@@ -202,25 +208,101 @@ The website is composed primarily of four main pages, the landing page, the post
     </details>
 ### User Post List Page
 - The user post list page contains all posts by a particular user.
-- It is structured in the same paginated way as the main post list page.
+- This page is accessible whether or not you are logged in.
+- It is structured in the same ordered and paginated way as the main post list page.
 - At the top of the page the number of posts by the user is displayed.
 - The information displayed beneath the image is stripped down to display just the post title and the comments icon with the number of comments.
 - Clicking on the image, post title and comments icon takes you to the post detail page.
     <details>
-    <summary>Post List Page</summary>
+    <summary>User Post List Page</summary>
     <img src="static/images/readme/screenshots/user_post_list_page.png">
     </details>
 ### Post Detail Page
-
+- The post detail page contains an expanded version of the card displayed on the post list page for a particular post.
+- This page is accessible whether or not you are logged in.
+- Beneath this there a section for a description of the post. The details of the description are displayed if there was one supplied by the author of the post.
+- The comments are displayed at the bottom of the page, if there are any. They are ordered with the oldest appearing at the top of the page.
+- If logged in there is a form providing the user with an opportunity to post a comment.
+    <details>
+    <summary>Post Detail Page (Not Logged in)</summary>
+    <img src="static/images/readme/screenshots/post_detail_page_no_auth.jpeg">
+    </details>
+    <details>
+    <summary>Post Detail Page (Logged in)</summary>
+    <img src="static/images/readme/screenshots/post_detail_page_with_auth.jpeg">
+    </details>
 ### Profile Page
-
+- The profile page contains the information about the user and is automatically created once a new user registers with the website.
+- It is only accessible by the logged in user who created it.
+- The profile image is displayed if one is uploaded and a default one if not.
+- An about the user section, username and email are displayed and there is an opportunity to update these if desired.
+- If the profile is updated succesffully a message appears confirming this which disappears after three seconds.
+    <details>
+    <summary>Profile Page</summary>
+    <img src="static/images/readme/screenshots/profile_page.jpeg">
+    </details>
+    <details>
+    <summary>Profile Update Message</summary>
+    <img src="static/images/readme/screenshots/profile_update_message.png">
+    </details>
 ### Create Post Page
-
+- The create post page is accessible only by logged in users and by the "Post" link in the navigation bar.
+- Here the user can upload an image and provide a title and description for the post.
+- Upon submitting the user is redirected to the post detail page for that post and a message appears confirming the upload which disappears after three seconds.
+    <details>
+    <summary>Create Post Page</summary>
+    <img src="static/images/readme/screenshots/create_post_page.png">
+    </details>
+    <details>
+    <summary>Post Success Message</summary>
+    <img src="static/images/readme/screenshots/post_success_message.png">
+    </details>
 ### Update Post Page
-
+- The update post page is accessible only by the user who created the post.
+- An edit and delete icon appear on the post detail page if the user who is logged in uploaded that post.
+- Clicking on the edit icon takes the use to the post edit page.
+- The post edit page is layed out the same as the create post page and is prepopulated with the information originally submitted with the post.
+- Once the infomation is updated and submitted the user is redirected to the post detail page for that post and a message appears confirming the upload which disappears after three seconds.
+    <details>
+    <summary>Post Update Page</summary>
+    <img src="static/images/readme/screenshots/post_update_page.png">
+    </details>
+    <details>
+    <summary>Post Update Success Message</summary>
+    <img src="static/images/readme/screenshots/post_update_success_message.png">
+    </details>
 ### Delete Post Page
-
-### Comment Post Page
+- The uelete post page is accessible only by the user who created the post.
+- An edit and delete icon appear on the post detail page if the user who is logged in uploaded that post.
+- Clicking on the delete icon takes the use to the post delete page confirming the post is intended to be deleted.
+- If not intended the user can return to the post delete page.
+- If the post is deleted the associated comments are also deleted and the user is returned to the main post list page.
+    <details>
+    <summary>Post Delete Page</summary>
+    <img src="static/images/readme/screenshots/post_delete_page.png">
+    </details>
+    <details>
+    <summary>Post Delete Success Message</summary>
+    <img src="static/images/readme/screenshots/post_delete_success_message.png">
+    </details>
+### Post Comments and Comment Form
+- The post comments are located on the post detail page along with the post comment form.
+- The comment form is acceessible only if the user is logged in.
+- Once a comment is posted a success message appears at the top of the post detail page which disappears after three seconds.
+- At the bottom of the page in the comments section a message is displayed saying the comment is awaiting approval.
+- A comment will not appear until it has been approved by the admin.
+    <details>
+    <summary>Comment form</summary>
+    <img src="static/images/readme/screenshots/post_comment.png">
+    </details>
+    <details>
+    <summary>Comment Success Message</summary>
+    <img src="static/images/readme/screenshots/comment_success.png">
+    </details>
+    <details>
+    <summary>Comment Approval Message</summary>
+    <img src="static/images/readme/screenshots/comment_approval.png">
+    </details>
 
 ### Signup Page
 
