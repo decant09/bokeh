@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     'cloudinary',
     'crispy_forms',
     'blog',
-    'django_extensions',
 ]
 
 SITE_ID = 1
