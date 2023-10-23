@@ -6,50 +6,61 @@ What is  bokeh? A place for photography enthusiasts to upload, share and learn. 
 To visit the live link to bokeh on Heroku click [here](https://decant09-bokeh-photo-blog-0c5a394f8c26.herokuapp.com/).  
 
 ## Contents
-- [User Experience](#user-experience)
+- [Bokeh Photography Blog](#bokeh-photography-blog)
+  - [Contents](#contents)
+  - [User Experience](#user-experience)
     - [Initial Discussion](#initial-discussion)
     - [User Stories](#user-stories)
-        - [First Time Visitor Goals](#first-time-visitor-goals)
-        - [Returning Visitor Goals](#returning-visitor-goals)
-        - [Frequent Visitor Goals](#frequent-visitor-goals)
+      - [First Time Visitor Goals](#first-time-visitor-goals)
+      - [Returning Visitor Goals](#returning-visitor-goals)
+      - [Frequent Visitor Goals](#frequent-visitor-goals)
     - [Design](#design)
-        - [Colour Scheme](#colour-scheme)
-        - [Typography](#typography)
-        - [Wireframes](#wireframes)
-- [Features](#features)
-    - [Home Page](#home-page)
-    - [Quiz Page](#quiz-page)
-    - [Quiz Over Page](#quiz-over-page)
+      - [Colour Scheme](#colour-scheme)
+      - [Typography](#typography)
+      - [Wireframes](#wireframes)
+  - [Features](#features)
+    - [Landing Page](#landing-page)
+    - [Post List Page](#post-list-page)
+    - [User Post List Page](#user-post-list-page)
+    - [Post Detail Page](#post-detail-page)
+    - [Profile Page](#profile-page)
+    - [Create Post Page](#create-post-page)
+    - [Update Post Page](#update-post-page)
+    - [Delete Post Page](#delete-post-page)
+    - [Comment Post Page](#comment-post-page)
+    - [Signup Page](#signup-page)
+    - [Login Page](#login-page)
+    - [Logout Page](#logout-page)
     - [Future Features](#future-features)
-- [Technologies Used](#technologies-used)
+  - [Technologies Used](#technologies-used)
     - [Languages](#languages)
     - [Frameworks](#frameworks)
     - [Database](#database)
     - [Libraries and Packages](#libraries-and-packages)
     - [Programs](#programs)
-- [Testing](#testing)
+  - [Testing](#testing)
     - [W3C Validator](#w3c-validator)
-        - [HTML](#html)
-        - [CSS](#css)
+      - [HTML](#html)
+      - [CSS](#css)
     - [JShint](#jshint)
-        - [JavaScript](#javascript)
+      - [JavaScript](#javascript)
     - [Accessibility](#accessibility)
-        - [WebAIM](#webaim)
-        - [Google Lighthouse](#google-lighthouse)
+      - [WebAIM](#webaim)
+      - [Google Lighthouse](#google-lighthouse)
     - [Manual](#manual)
     - [Testing User Stories from User Experience (UX) Section](#testing-user-stories-from-user-experience-ux-section)
-        - [First Time Visitor Goals](#first-time-visitor-goals-1)
-        - [Returning Visitor Goals](#returning-visitor-goals-1)
-        - [Frequent Visitor Goals](#frequent-visitor-goals-1)
+      - [First Time Visitor Goals](#first-time-visitor-goals-1)
+      - [Returning Visitor Goals](#returning-visitor-goals-1)
+      - [Frequent Visitor Goals](#frequent-visitor-goals-1)
     - [Bugs](#bugs)
-        - [Known](#known)
-        - [Solved](#solved)
-- [Deployment and Local Development](#deployment-and-local-development)
+      - [Known](#known)
+      - [Solved](#solved)
+  - [Deployment and Local Development](#deployment-and-local-development)
     - [Deployment](#deployment)
     - [Local Development](#local-development)
-        - [How to Fork](#how-to-fork)
-        - [How to Clone](#how-to-clone)
-- [Credits](#credits)
+      - [How to Fork](#how-to-fork)
+      - [How to Clone](#how-to-clone)
+  - [Credits](#credits)
     - [Code Used](#code-used)
     - [Resources](#resources)
     - [Acknowledgements](#acknowledgements)
@@ -153,7 +164,7 @@ Wireframes were created for the website layout. The layout is the same across di
 </details>
 <details>
 <summary>Logout Page</summary>
-<img src="static/images/readme/wireframes/landing_page.png">
+<img src="static/images/readme/wireframes/logout_page.png">
 </details>  
 
 ## Features
@@ -163,19 +174,42 @@ The website is composed primarily of four main pages, the landing page, the post
 - There is a footer which credits myself as the designer of the website and a link to my GitHub profile.
 - The navigation bar and footer are features which are carried across all areas of the website.
 - The main body of the landing page contains a brief statement as to what the purpose of the website is and below this there is a call to action button labeled "Explore" which takes you to the feed, also known as the post list page.  
-<details>
-<summary>Landing Page</summary>
-<img src="static/images/readme/screenshots/landing_page.png">
-</details>
-<details>
-<summary>Navigation Bar Dropdown on Mobile</summary>
-<img src="static/images/readme/screenshots/navbar_dropdown.jpg">
-</details>
+    <details>
+    <summary>Landing Page</summary>
+    <img src="static/images/readme/screenshots/landing_page.png">
+    </details>
+    <details>
+    <summary>Navigation Bar Dropdown on Mobile</summary>
+    <img src="static/images/readme/screenshots/navbar_dropdown.jpg">
+    </details>
 
 ### Post List Page
-
+- The post list page, or feed page, contains the posts made to the website by users.
+- Ths posts are displayed in rows of three posts per row.
+- This page is paginated so that six posts are displayed per page resulting in two rows with three posts on each.
+- The most recent post to the website is displayed at the top left of this structure and are chronological thereafter.
+- On mobile, the pagination of six is maintained, however, the number of posts per row is reduced to one resulting in six rows with one post on each.
+- The user can access the different pages by clicking on the "next" or "prev" buttons beneath the group of six posts. The "next" button appears depending on whether or not there are enough posts to populate a new page.
+- Each post is presented in a card like format, the main body of which is the image.
+- Beneath the image there is an area that displays the post title along with a comments icons displaying the number of comments on the post.
+- Beneath this the username of the user who posted, along with their image is displayed.
+- The date posted is also displayed.
+- Clicking on the image, the title or the comments icon takes you to the post detail page.
+- Clicking on the username takes you the page displaying all posts by that user.
+    <details>
+    <summary>Post List Page</summary>
+    <img src="static/images/readme/screenshots/post_list_page.jpeg">
+    </details>
 ### User Post List Page
-
+- The user post list page contains all posts by a particular user.
+- It is structured in the same paginated way as the main post list page.
+- At the top of the page the number of posts by the user is displayed.
+- The information displayed beneath the image is stripped down to display just the post title and the comments icon with the number of comments.
+- Clicking on the image, post title and comments icon takes you to the post detail page.
+    <details>
+    <summary>Post List Page</summary>
+    <img src="static/images/readme/screenshots/user_post_list_page.png">
+    </details>
 ### Post Detail Page
 
 ### Profile Page
