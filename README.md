@@ -745,43 +745,43 @@ The website is composed primarily of four main pages, the landing page, the post
 - Blog urls
     <details>
     <summary>All clear, no errors found.</summary>
-    <img src="static/images/readme/testing/python/project_urls.png">
+    <img src="static/images/readme/testing/python/blog_urls.png">
     </details>
 
 - Blog admin
     <details>
     <summary>All clear, no errors found.</summary>
-    <img src="static/images/readme/testing/python/project_admin.png">
+    <img src="static/images/readme/testing/python/blog_admin.png">
     </details>
 
 - Blog apps
     <details>
     <summary>All clear, no errors found.</summary>
-    <img src="static/images/readme/testing/python/project_apps.png">
+    <img src="static/images/readme/testing/python/blog_apps.png">
     </details>
 
 - Blog forms
     <details>
     <summary>All clear, no errors found.</summary>
-    <img src="static/images/readme/testing/python/project_forms.png">
+    <img src="static/images/readme/testing/python/blog_forms.png">
     </details>
 
 - Blog models
     <details>
     <summary>All clear, no errors found.</summary>
-    <img src="static/images/readme/testing/python/project_aodels.png">
+    <img src="static/images/readme/testing/python/blog_models.png">
     </details>
 
 - Blog signals
     <details>
     <summary>All clear, no errors found.</summary>
-    <img src="static/images/readme/testing/python/project_signals.png">
+    <img src="static/images/readme/testing/python/blog_signals.png">
     </details>
 
 - Blog views
     <details>
     <summary>All clear, no errors found.</summary>
-    <img src="static/images/readme/testing/python/project_views.png">
+    <img src="static/images/readme/testing/python/blog_views.png">
     </details>
 
 ### Accessibility
@@ -792,45 +792,77 @@ The website is composed primarily of four main pages, the landing page, the post
 
 #### Google Lighthouse
 Google Lighthouse was used to test for accessibility for each page.
-- Base template (base.html)
-    - Result - #  
-    ![]()
-- Comment Delete Page (comment_confirm_delete.html)  
-  - Result - #  
-    ![]()
+- Comment Delete Page (comment_confirm_delete.htl)  
+    <details>
+    <summary>Result - 100</summary>
+    <img src="static/images/readme/testing/lighthouse/comment_delete.png">
+    </details>
+
 - Landng Page (index.html)  
-    - Result - #  
-    ![]()
+    <details>
+    <summary>Result - 100</summary>
+    <img src="static/images/readme/testing/lighthouse/landing.png">
+    </details>
+
 - Post Delete Page (post_confirm_delete.html)  
-    - Result - #  
-    ![]()
+    <details>
+    <summary>Result - 100</summary>
+    <img src="static/images/readme/testing/lighthouse/post_delete.png">
+    </details>
+
 - Post Detail Page (post_detail.html)  
-    - Result - #  
-    ![]()
+    <details>
+    <summary>Result - 94</summary>
+    <img src="static/images/readme/testing/lighthouse/post_detail.png">
+    </details>
+
 - Post Edit Page (post_edit.html)  
-    - Result - #  
-    ![]()
+    <details>
+    <summary>Result - 100</summary>
+    <img src="static/images/readme/testing/lighthouse/post_edit.png">
+    </details>
+
 - Post Form Page (post_form.html)  
-    - Result - #  
-    ![]()
+    <details>
+    <summary>Result - 100</summary>
+    <img src="static/images/readme/testing/lighthouse/create_post.png">
+    </details>
+
 - Feed Page (post_list.html)  
-  - Result - #  
-    ![]()
+    <details>
+    <summary>Result - 100</summary>
+    <img src="static/images/readme/testing/lighthouse/post_list.png">
+    </details>
+
 - Profile Page (profile.html)  
-    - Result - #  
-    ![]()
+    <details>
+    <summary>Result - 98</summary>
+    <img src="static/images/readme/testing/lighthouse/profile.png">
+    </details>
 - User Post List Page (user_post_list.html)  
-  - Result - #  
-    ![]()
+    <details>
+    <summary>Result - 98</summary>
+    <img src="static/images/readme/testing/lighthouse/user_post_list.png">
+    </details>
+
 - Signup Page (signup.html)  
-  - Result - #  
-    ![]()  
+    <details>
+    <summary>Result - 100</summary>
+    <img src="static/images/readme/testing/lighthouse/signup.png">
+    </details>
+
 - Login Page (login.html)  
-  - Result - #  
-    ![]()  
+    <details>
+    <summary>Result - 100</summary>
+    <img src="static/images/readme/testing/lighthouse/login.png">
+    </details>
+
 - Logout Page (logout.html)  
-  - Result - #  
-    ![]()   
+    <details>
+    <summary>Result - 100</summary>
+    <img src="static/images/readme/testing/lighthouse/logout.png">
+    </details>
+
 ### Manual
 - I used Google Dev Tools to test for screen responsiveness.  
 ![]()  
