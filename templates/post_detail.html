@@ -14,7 +14,7 @@
           onclick="enlargeImage(this)"
           alt="Image"
           class="card-img-top"
-          width="100"
+          width="100%"
           style="cursor: pointer"
         />
         <div
@@ -95,6 +95,7 @@
           <h5 class="card-title">
             <i class="far fa-comments"></i>
             {{ total_comments }} Comment{{ total_comments|pluralize }}
+          </h5>
           {% endwith %}
         </div>
         {% for comment in comments %}

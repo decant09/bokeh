@@ -9,9 +9,13 @@
           <div class="card h-100 mb-4">
             <div class="image-container">
               <a href="{% url 'post-detail' post.slug %}">
-                <img src="{{ post.image.url }}"
-                  alt="Image" class="card-img-top" width="100%" />
-                </a>
+                <img
+                  src="{{ post.image.url }}"
+                  alt="Image"
+                  class="card-img-top"
+                  width="100%"
+                />
+              </a>
             </div>
             <div class="card-body">
               <div class="d-flex justify-content-between">
@@ -26,37 +30,49 @@
                 </div>
                 <div>
                   {% with post.comments.count as total_comments %}
-                  <h5><a href="{% url 'post-detail' post.slug %}"
-                    class="title-link">
-                    <i class="far fa-comments"></i>
-                    {{ total_comments }}</a></h5>
+                  <h5>
+                    <a
+                      href="{% url 'post-detail' post.slug %}"
+                      class="title-link"
+                    >
+                      <i class="far fa-comments"></i>
+                      {{ total_comments }}</a
+                    >
                   </h5>
                 </div>
               </div>
               {% endwith %}
               <div class="card border-0">
-                  <div class="d-flex justify-content-start">
-                    <div>
-                        {% if "placeholder" in post.author.profile.image.url %}
-                        <img class="card-img-top rounded-circle post-profile-img"
-                            src="https://res.cloudinary.com/dfsv2olye/image/upload/v1697560113/default_profile_mjdh7j.png" />
-                        {% else %}
-                        <img class="card-img-top rounded-circle post-profile-img" src="{{ post.author.profile.image.url }}" />
-                        {% endif %}
-                    </div>
-                    <div style="padding-left: 10px">
-                      <p class="card-title">
-                        <a class="title-link" href="{% url 'user-post-list' post.author.username %}">
-                          <strong>{{ post.author }}</strong>
-                        </a>
-                      </p>
-                      <p class="card-text">
-                        <small class="text-muted"
-                          >{{ post.created_on|date:'M d, Y' }}</small
-                        >
-                      </p>
-                    </div>
+                <div class="d-flex justify-content-start">
+                  <div>
+                    {% if "placeholder" in post.author.profile.image.url %}
+                    <img
+                      class="card-img-top rounded-circle post-profile-img"
+                      src="https://res.cloudinary.com/dfsv2olye/image/upload/v1697560113/default_profile_mjdh7j.png"
+                    />
+                    {% else %}
+                    <img
+                      class="card-img-top rounded-circle post-profile-img"
+                      src="{{ post.author.profile.image.url }}"
+                    />
+                    {% endif %}
                   </div>
+                  <div style="padding-left: 10px">
+                    <p class="card-title">
+                      <a
+                        class="title-link"
+                        href="{% url 'user-post-list' post.author.username %}"
+                      >
+                        <strong>{{ post.author }}</strong>
+                      </a>
+                    </p>
+                    <p class="card-text">
+                      <small class="text-muted"
+                        >{{ post.created_on|date:'M d, Y' }}</small
+                      >
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
