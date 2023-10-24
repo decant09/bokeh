@@ -51,6 +51,14 @@ To visit the live link to bokeh on Heroku click [here](https://decant09-bokeh-ph
       - [WebAIM](#webaim)
       - [Google Lighthouse](#google-lighthouse)
     - [Manual](#manual)
+      - [Account Registration Tests](#account-registration-tests)
+      - [User Navigation Tests](#user-navigation-tests)
+      - [Links and Buttons Tests](#links-and-buttons-tests)
+      - [Account Security Tests](#account-security-tests)
+      - [Post Tests](#post-tests)
+      - [Comment Tests](#comment-tests)
+      - [Profile Tests](#profile-tests)
+      - [Admin Tests](#admin-tests)
     - [Testing User Stories from User Experience (UX) Section](#testing-user-stories-from-user-experience-ux-section)
       - [First Time Visitor Goals](#first-time-visitor-goals-1)
       - [Returning Visitor Goals](#returning-visitor-goals-1)
@@ -564,7 +572,7 @@ The website is composed primarily of four main pages, the landing page, the post
         <img src="static/images/readme/screenshots/login_success_message.png">
     </details>
 ### Logout Page
-- The logout page is accessed by logged in users clicking the "Logout" link in the navagation bar.
+- The logout page is accessed by logged in users clicking the "Logout" link in the navigation bar.
 - The user is taken to the logout page where there are asked to confirm their logout by clicking "Sign Out".
 - If they do not wish to logout they can click on any of the links in the navigation bar.
 - If they confirm logout the user is taken to the landing page and a disappearing logout success message is displayed.
@@ -880,54 +888,207 @@ Google Lighthouse was used to test for accessibility for each page.
 
 ### Manual
 - I used Google Dev Tools to test for screen responsiveness.  
-![]()  
 - I tested on different browsers (chrome, firefox, safari and edge) to ensure the website performs as expected across all of these.
 - I tested on Android and iPhone devices.
-- I tested all the buttons and answer fields on the website manually to ensure that they all work as expected. Upon hovering over
-them the desired effect is realised. The main buttons redirect appropriately to the website areas they are linked to. The answer
-fields behave as intended.
 - I spellchecked the website and the readme using [Online Spellcheck](https://www.online-spellcheck.com/). I also used
 [Webpage Spell-Check](https://chrome.google.com/webstore/detail/webpage-spell-check/mgdhaoimpabdhmacaclbbjddhngchjik), a google chrome extension.
 - I used [Grammarly](https://www.grammarly.com/) to check for grammatical errors.
+- All features of the website were manually tested and documented in the following sections.
 
-### Testing User Stories from User Experience (UX) Section
+#### Account Registration Tests
+
+| Test |Result  |
+|--|--|
+| User can create account | Pass |
+| User can log into account| Pass |
+| User can log out of account| Pass |
+
+---
+
+#### User Navigation Tests
+
+| Test |Result  |
+|--|--|
+| User can navigate to Feed | Pass |
+| User can navigate to login page | Pass |
+| Logged in user can access their profile | Pass |
+| Logged in user can navigate to logout page | Pass |
+| SuperUser can access admin panel | Pass |
+| 403 page displayed as intended | Pass |
+| 404 page displayed as intended | Pass |
+
+---
+
+#### Links and Buttons Tests
+
+| Test |Result  |
+|--|--|
+| All buttons act as intended | Pass |
+| All links act as intended | Pass |
+| Image links act intended | Pass |
+| Image modal acts as intended | Pass |
+
+---
+
+#### Account Security Tests
+
+| Test |Result  |
+|--|--|
+| Non logged in user cannot create a post | Pass |
+| Non logged in user cannot access profile page | Pass|
+| Non superuser cannot access admin panel |Pass|
+
+---
+
+#### Post Tests
+
+| Test |Result  |
+|--|--|
+| Posts are visible to all users | Pass |
+| Only logged in user can create post | Pass |
+| Only author of post can edit post | Pass |
+| Only author of post can delete post | Pass |
+
+---
+
+#### Comment Tests
+
+| Test |Result  |
+|--|--|
+| Only approved comments are visible to all users | Pass |
+| Only logged in user can post a comment | Pass |
+| Only author of comment can delete comment | Pass |
+| Only author of post can delete post | Pass |
+
+---
+
+#### Profile Tests
+
+| Test |Result  |
+|--|--|
+| User can update their username from the profile page | Pass |
+| User can update/add a profile image from the profile page | Pass |
+| User can update edit their email address | Pass |
+| User cannot change username to one already in use | Pass|
+| User cannot change email to one already in use | Fail |
+
+#### Admin Tests
+
+| Test | Result  |
+|--|--|
+|Admin can add posts | Pass |
+|Admin can add comments | Pass |
+|Admin can update posts | Pass |
+|Admin can update comments | Pass |
+|Admin can approve comments | Pass |
+|Admin can update profiles | Pass |
+|Admin can delete posts | Pass |
+|Admin can delete comments | Pass |
+|Admin can delete profiles | Pass |
+
+
+### Testing User Stories from User Experience (UX) 
+All images to support the testing have been documented previously in the Features section above. To avoid repitition of material I have not included theses images in this section. Please refer to the [Features](#features) section for the supporting images for the content addressed below.
 #### First Time Visitor Goals
 - I want to know what the website is about upon arriving.
-  - ...
-    ![]()
+  - There is a desciption of the website on the landing page
 - I want the website to be easily navigatable.
+  -  There is a navigation bar at the top of the page and this in maintained throughout the website.
+  -  Clicking on the navigation links takes the user to the relevant section of the website.
+  -  The section of the website that the user is currently on is made clear as the navigation link pertaining to it is in bold.
+  -  The website logo in the top left of the page is a link to the landing page. This is available throughout the website.
 - I want any links to be obvious by changing appearance once hovered over.
+  - Buttons change appearance when hovered over.
+  - Text that contains a link changes colour and the cursor changes to pointer when hovered over.
+  - The cursor changes to pointer when images that contain links are hovered over.
+  - Images that can be expanded have an prompt in the top right corner with the text "Click image" alongside an expand icon.
 - I want the website to be responsive to the device screen size that I am using.
+  - The website is created using Bootstrap and is responsive across all devices.
 - I want to be able to explore the website without registering or signing up.
+  - A user who is not registered acn access the website but with limited funtionality.
+  - All posts and comments can be seen but can can not be contributed to.
 - I want a feed page to display all posts with the most recent posts to be displayed at the top.
+  - There is a post list list page which is accessed throught the "Feed" link in the navigation bar.
+  - The most recent post appears at the top of the page.
 - I want the feed page to be paginated to that I don't hhve to scroll to see all posts.
+  - Posts are paginated with six posts per page.
+  - On medium to large screen devices they appear in two rows by three columns.
+  - On small screen devices they appear as a single column of six posts to improve the user experience.
+  - A "Next" button appears at bottom f the page if there are more posts than on the current page.
+  - A "Prev" button takes the user back to the previous page if there is one.
 - I want to be able to enlarge post images to the see the detail more clearly.
+  - Clicking on an image takes the user to the psot detail page where an enlarged version of the image is available.
+  - An expand option is available on this page to have the image appear across the whole screen.
 - I want to see who made the post, and when, by having a username, profile image and date displayed beside the post.
+  - Beneath the post image the title, username, and date posted are displayed.
+  - The user's profile image is also show in a circle if one is supplied by the user, a default profile image is shown if not.
 - I want the post to have a title.
+  - The post will have a title as this is a required field when a post is uploaded.
+  - This is then displayed along witht he post.
 - I want to see if there are any comments on the post and for that to be visible with an icon showing the number of comments beside it.
+  - There is a comment icon alongside the post title which displays the number of comments beside it.
 - I want to be able to navigate to where the comment content is displayed and for the oldest comment to be displayed at the top.
+  - By clicking the post image, post title text, or comment icon, the user is taken to the post detail page which shows the post's comments towards the bottom oof the page.
+  - The oldest comments are at the top of the feed.
 - I want to see if the author has posted a description or any extra information regarding the photo.
-- If I like a particular photo I want to see all of the photos by that author on its own paginated. 
+  - This is located on the post detail page in the description section which can be accessed as above.
+  - A description is not a required field when uploading a post and will only appear if there was one uploaded.
+- If I like a particular photo I want to see all of the photos by that author on its own paginated.
+  - Click on the username, which is located as described above below the post image, takes the user to a page displaying all posts by that author.
+  - The most recent post appears first.
 #### Returning Visitor Goals
 - I want to be able to register to the website and signin so that I can access extra features.
+  - The registration form can be accessed by clicking on the "Register" link in the navigation bar.
 - I want a message to be displayed if I haven't completed the signup process correctly and what actions I need to take.
+  - The user is given prompts if the registration form is not completed correctly.
+  - These prompts point the user to the areas that need to be addressed.
+  - Once the details are entered correctly the new user is logged in.
 - I want to be able to signout so that my account is secured.
+  - There is a "Logout" link in the navigation bar to allow the user to signout.
+  - Once clicked the user is taken to a page to confir they want to logout.
 - I want success messagest to appear on signing in and out.
+  - Disappearing success messages appear at the top op the page letting the user know they have signed in or signed out successfully.
 - I want a profile to be automatically created once I register.
+  - A profile is automatically created on registration and can be access once logged by clicking on the "Profile" link in the navigation bar.
 - I want a default profile image to be displayed if I do not want to upload an image to my profile.
+  - A default user profile image is automatically assigned to the user's profile.
+  - This can be updated to a didfferent image is the user desires in the profile section which contains a form to allow the user to do so.
 - I want to have a username and not have to supply my first and last names.
+  - First and last names are not required during the registration process, only a username must be supplied.
 - I want only registered users to be able to contribute posts to the website.
+  - To contribute a post to the website the "Post" link in the navigation bar is clicked.
+  - This is only availabe when a user is logged in and therefore only logged in users can contribute posts.
 - I want only registered users to be able to comment on posts.
+  - Like for a post, the comment form is only available to logged in users.
+  - The comment form appears below the comments on the post detail page.
+  - Both features are protected by login requirements. If a user entered the url in their browser for the post feature, without being logged in, then they would be redirected to the login page.
 #### Frequent Visitor Goals
-
 - I want to have autonomy over posts I have made and be able to update or delete them if I desire.
+  - An edit and delete icon appears next to a post title but only if the user who created the post is logged in at the time.
+  - This allows onlt the author of the post to be able to make changes to the post.
+  - If a user enters the url to amend a post that is not theirs, then they are taken to a 403 not authorized page.
+  - This page contains a redirect button for the landing page.
+    <details>
+    <summary>403 Page</summary>
+    <img src="static/images/readme/screenshots/403_page.png">
+    </details>
 - I want to have autonomy over comments I have made and be able to delete them if I desire.
+  - Like with a post, a delete icon appears beside a comment only if the user who is logged in posted that comment.
+  - It will not appear to users who are logged in and have not posted the comment or to users who are not logged in. 
 - I want a page to be displayed if I click the delete icon warning me that I am about to delete content before I proceed.
+  - Clicking on the delete icon takes the user to a page to confirm that they would like to delete the comment.
+  - If they would not like to there is a button to return to the pst detail page.
+  - There is a button to confirm deletion.
 - I want success messages to appear when I have created, updated ot deleted content.
+  - Disappearing success messages appear when all of these actions have been completed successfully.
 - I want the comments to need prior approval from the admin before appearing on the website.
+  - Once a comment has been posted a success message appears lettng the user know that the comment is awaiting approveal from the admin team.
 - I want to be able to delete my profile (future implementation).
+  - Unfortunately, I was not able to implement this feature in the given timeframe.
 - I want to be able to create posts with a category attached so that I can see all posts in a given category in one location. (future implementation)
+  - Unfortunately, I was not able to implement this feature in the given timeframe.
 - I want to be able to add a post to my favourites so that I can view all my favourite posts in one location (future implementation)
+  - Unfortunately, I was not able to implement this feature in the given timeframe.
 
 ### Bugs
 #### Known
@@ -963,7 +1124,7 @@ The site was deployed to Heroku and the following steps were followed to do so:
 - Select the region and choose the nearest data centre to your location.
 - Click "Review" and then click "Create instance" if details are as intended.
 - In the Instances section click on the instance name that was just created.
-- In the Details section click on the copy icon located next to the URL. This will be used in the Heroku Config Vars.
+- In the Details section click osn the copy icon located next to the URL. This will be used in the Heroku Config Vars.
 - Back in Heroku slect the app that you just set up.
 - In the settings tab of the app click on "Reveal Config Vars" and store the required config var keys and values as below:
     - CLOUDINARY_URL: *Cloudinary URL as obtained above*
