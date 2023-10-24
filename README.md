@@ -172,6 +172,7 @@ The website is composed primarily of four main pages, the landing page, the post
 ### Landing Page  
 - The home page contains a navigation bar at the top of the page which contains the website logo and navigation links. The navigation links are compressed into a dropdown menu on mobile devices.
 - The navigation links change depending on whether a user is logged in.
+- There is a logo, which when clicked anywhere on the website, takes the user back to the landing page.
 - There is a footer which credits myself as the designer of the website and a link to my GitHub profile.
 - The navigation bar and footer are features which are carried across all areas of the website.
 - The main body of the landing page contains a brief statement as to what the purpose of the website is and below this there is a call to action button labeled "Explore" which takes you to the feed, also known as the post list page.  
@@ -185,9 +186,8 @@ The website is composed primarily of four main pages, the landing page, the post
     </details>
     <details>
     <summary>Navigation Bar Logged in</summary>
-    <img src="static/images/readme/screenshots/navbar_logged_in.jpg">
+    <img src="static/images/readme/screenshots/navbar_logged_in.png">
     </details>
-
 ### Post List Page
 - The post list page, or feed page, contains the posts made to the website by users.
 - This page is accessible whether or not you are logged in
@@ -220,7 +220,10 @@ The website is composed primarily of four main pages, the landing page, the post
 ### Post Detail Page
 - The post detail page contains an expanded version of the card displayed on the post list page for a particular post.
 - This page is accessible whether or not you are logged in.
+- There is an expand icon in the top right corner of the image with the text "click image" beside to let the user know to click the image to expand. This expands the image in a modal to be view on the fullscreen. Clicking the anywhere on the screen closes the modal.
 - Beneath this there a section for a description of the post. The details of the description are displayed if there was one supplied by the author of the post.
+- If the user who created the post is logged in, then post edit and delete icons are displayed to allow the user to perform the actions if desired.
+- These icons are not displated and the actions are noy available if the user did not create the post.
 - The comments are displayed at the bottom of the page, if there are any. They are ordered with the oldest appearing at the top of the page.
 - If logged in there is a form providing the user with an opportunity to post a comment.
     <details>
@@ -230,6 +233,22 @@ The website is composed primarily of four main pages, the landing page, the post
     <details>
     <summary>Post Detail Page (Logged in)</summary>
     <img src="static/images/readme/screenshots/post_detail_page_with_auth.jpeg">
+    </details>
+    <details>
+    <summary>Expand Image</summary>
+    <img src="static/images/readme/screenshots/image_expand.png">
+    </details>
+    <details>
+    <summary>Modal Display</summary>
+    <img src="static/images/readme/screenshots/modal_display.png">
+    </details>
+    <details>
+    <summary>Post Edit and Delete Icon With Authorization</summary>
+    <img src="static/images/readme/screenshots/post_edit_delete_icons_with_auth.jpeg">
+    </details>
+    <details>
+    <summary>Post Edit and Delete Icon No Authorization</summary>
+    <img src="static/images/readme/screenshots/post_edit_delete_icons_no_auth.png">
     </details>
 ### Profile Page
 - The profile page contains the information about the user and is automatically created once a new user registers with the website.
@@ -291,6 +310,9 @@ The website is composed primarily of four main pages, the landing page, the post
 - Once a comment is posted a success message appears at the top of the post detail page which disappears after three seconds.
 - At the bottom of the page in the comments section a message is displayed saying the comment is awaiting approval.
 - A comment will not appear until it has been approved by the admin.
+- If a comment that is displayed ias posted by the current logged in user a delete icon appears next to it allowing the user the opportunity to delete the comment if desitrd.
+- Clicking on the icon takes the suer to the comment delete page asking them if they are sure they would like to delete the comment or return back to the post.
+- If deleted, the user is taken to the post list page with a disappearing message confirming the comment was deleted.
     <details>
     <summary>Comment form</summary>
     <img src="static/images/readme/screenshots/post_comment.png">
@@ -303,21 +325,68 @@ The website is composed primarily of four main pages, the landing page, the post
     <summary>Comment Approval Message</summary>
     <img src="static/images/readme/screenshots/comment_approval.png">
     </details>
-
+    <details>
+    <summary>Comment Delete Icon</summary>
+    <img src="static/images/readme/screenshots/comment_delete_icon_with_auth.png">
+    </details>
+    <details>
+    <summary>Comment Delete Page</summary>
+    <img src="static/images/readme/screenshots/comment_delete_page.png">
+    </details>
+    <details>
+    <summary>Comment Delete Success Message</summary>
+    <img src="static/images/readme/screenshots/comment_delete_success_message.png">
+    </details>
 ### Signup Page
-
+- The signup page is accessedfrom the navigation bar when a user is not logged in.
+- Clicking on the "Register" link opens the page
+- The user is required to proved a username, email address and password.
+- If the these fields are not filled out correctly error messages are displayed.
+- Once completed correctly and the "Sign Up" button clicked the user is logged in and the user is taken to the post list page.
+- A disappearing login success message is displayed as shown in the next section (login success message).
+    <details>
+    <summary>Signup Page</summary>
+    <img src="static/images/readme/screenshots/signup_page.png">
+    </details>
+    <details>
+    <summary>Signup Errors Page</summary>
+    <img src="static/images/readme/screenshots/signup_error_prompts.png">
+    </details>
 ### Login Page
-
+- The login page is available in the navigation bar to users who are not already logged in under "Login".
+- The user is taken to the login page where they enter their username and password.
+- Errors are displayed if the details are not correct.
+- Once completed correctly and the "Sign In" button clicked the user is taken to the post list page with a disappearing message displayed confirming their login.
+    <details>
+        <summary>Signin Page</summary>
+        <img src="static/images/readme/screenshots/signin_page.png">
+    </details>
+    <details>
+        <summary>Signin Error Prompts</summary>
+        <img src="static/images/readme/screenshots/signin_error_prompts.png">
+    </details>
+    <details>
+        <summary>Login Success Message</summary>
+        <img src="static/images/readme/screenshots/login_success_message.png">
+    </details>
 ### Logout Page
-
+- The logout page is accessed by logged in users clicking the "Logout" link in the navagation bar.
+- The user is taken to the logout page where there are asked to confirm their logout by clicking "Sign Out".
+- If they do not wish to logout they can click on any of the links in the navigation bar.
+- If they confirm logout the user is taken to the landing page and a disappearing logout success message is displayed.
+    <details>
+        <summary>Logout Page</summary>
+        <img src="static/images/readme/screenshots/signout_page.png">
+    </details>
+    <details>
+        <summary>Logout Success Message</summary>
+        <img src="static/images/readme/screenshots/logout_success_message.png">
+    </details>
 ### Future Features
-- The website is based on the Scottish linguistic variation of English, as well as its regional dialects. However, on a similar
-basis, I would like to include England and Ireland specific quizzes.
-- The structure would be the same, but instead, the homepage would be modified to add buttons that would allow the user to choose the
-England, Ireland, or Scotland quiz option.
-- At the outset of creating this website I intended to have a leaderboard feature that would display the top three scores achieved
-by users. However, time constraints meant that I had to remove this feature from the website as it was not fully complete by the
-time of submission.
+- I would like to create a category model where the user could choose from a category when uploading their post. The category would be displayed with the post detail. Clicking on the category would take the user to that category's page and allow the user to see all posts under that category.
+- I would like to create a favourites feature where the user could add a particular post to their favourites and view these all on one page.
+- I would like to have a feature where the user was able to delete their profile and account.
+- These features were intended to be implemented but I was not able to complete them in the time permitted.
 ##  Technologies Used
 ### Languages
 - HTML5
