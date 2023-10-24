@@ -18,6 +18,7 @@ To visit the live link to bokeh on Heroku click [here](https://decant09-bokeh-ph
       - [Colour Scheme](#colour-scheme)
       - [Typography](#typography)
       - [Wireframes](#wireframes)
+      - [Database Schema](#database-schema)
   - [Features](#features)
     - [Landing Page](#landing-page)
     - [Post List Page](#post-list-page)
@@ -166,6 +167,197 @@ Wireframes were created for the website layout. The layout is the same across di
 <summary>Logout Page</summary>
 <img src="static/images/readme/wireframes/logout_page.png">
 </details>  
+
+#### Database Schema
+The database models for this project are shown in the schema below and were created using [Graphviz](https://dreampuf.github.io/GraphvizOnline/). I have included flowchart diagrams to show how the different models relate to each other. The master flowchart shows all of the extended models in the project, some of which were not used but came with imports, for example the social models which came with the Django Allauth import. I have icluded a more refined flowchart showing the models I created and how they relate to each other. I have also included the model structure in tabular form.
+<details>
+<summary>Master Flowchart</summary>
+<img src="static/images/readme/database/model_flowchart.png">
+</details>  
+<details>
+<summary>Reduced Flowchart</summary>
+<img src="static/images/readme/database/model_flowchart_reduced.png">
+</details>
+<details>
+<summary>Master Table</summary>
+<img src="static/images/readme/database/model_table.png">
+</details>
+<details>
+<summary>User</summary>
+<TABLE BGCOLOR="white" BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="2" CELLPADDING="5" ALIGN="CENTER" BGCOLOR="#1b563f">
+<FONT FACE="Roboto" COLOR="white" POINT-SIZE="10"><B>
+User<BR/>&lt;<FONT FACE="Roboto"><I>AbstractUser</I></FONT>&gt;
+</B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto"><B>id</B></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto"><B>AutoField</B></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto"><I>date_joined</I></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto"><I>DateTimeField</I></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT COLOR="#7B7B7B" FACE="Roboto"><I>email</I></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT COLOR="#7B7B7B" FACE="Roboto"><I>EmailField</I></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT COLOR="#7B7B7B" FACE="Roboto"><I>first_name</I></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT COLOR="#7B7B7B" FACE="Roboto"><I>CharField</I></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto"><I>is_active</I></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto"><I>BooleanField</I></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto"><I>is_staff</I></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto"><I>BooleanField</I></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto"><I>is_superuser</I></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto"><I>BooleanField</I></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT COLOR="#7B7B7B" FACE="Roboto"><I>last_login</I></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT COLOR="#7B7B7B" FACE="Roboto"><I>DateTimeField</I></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT COLOR="#7B7B7B" FACE="Roboto"><I>last_name</I></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT COLOR="#7B7B7B" FACE="Roboto"><I>CharField</I></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto"><I>password</I></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto"><I>CharField</I></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto"><I>username</I></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto"><I>CharField</I></FONT>
+</TD></TR>
+</TABLE>
+</details>
+<details>
+<summary>Post</summary>
+<TABLE BGCOLOR="white" BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="2" CELLPADDING="5" ALIGN="CENTER" BGCOLOR="#1b563f">
+<FONT FACE="Roboto" COLOR="white" POINT-SIZE="10"><B>
+Post
+</B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto"><B>id</B></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto"><B>BigAutoField</B></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto"><B>author</B></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto"><B>ForeignKey (id)</B></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT COLOR="#7B7B7B" FACE="Roboto">created_on</FONT>
+</TD><TD ALIGN="LEFT">
+<FONT COLOR="#7B7B7B" FACE="Roboto">DateTimeField</FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto">description</FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto">TextField</FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto">image</FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto">CloudinaryField</FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto">slug</FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto">SlugField</FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto">title</FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto">CharField</FONT>
+</TD></TR>
+</TABLE>
+</details>
+<details>
+<summary>Comment</summary>
+<TABLE BGCOLOR="white" BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="2" CELLPADDING="5" ALIGN="CENTER" BGCOLOR="#1b563f">
+<FONT FACE="Roboto" COLOR="white" POINT-SIZE="10"><B>
+Comment
+</B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto"><B>id</B></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto"><B>BigAutoField</B></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto"><B>post</B></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto"><B>ForeignKey (id)</B></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto"><B>u_name</B></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto"><B>ForeignKey (id)</B></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto">approved</FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto">BooleanField</FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto">body</FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto">TextField</FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT COLOR="#7B7B7B" FACE="Roboto">created_on</FONT>
+</TD><TD ALIGN="LEFT">
+<FONT COLOR="#7B7B7B" FACE="Roboto">DateTimeField</FONT>
+</TD></TR>
+</TABLE>
+</details>
+<details>
+<summary>Profile</summary>
+<TABLE BGCOLOR="white" BORDER="1" CELLBORDER="0" CELLSPACING="0">
+<TR><TD COLSPAN="2" CELLPADDING="5" ALIGN="CENTER" BGCOLOR="#1b563f">
+<FONT FACE="Roboto" COLOR="white" POINT-SIZE="10"><B>
+Profile
+</B></FONT></TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto"><B>id</B></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto"><B>BigAutoField</B></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto"><B>user</B></FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto"><B>OneToOneField (id)</B></FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT COLOR="#7B7B7B" FACE="Roboto">about_user</FONT>
+</TD><TD ALIGN="LEFT">
+<FONT COLOR="#7B7B7B" FACE="Roboto">CharField</FONT>
+</TD></TR>
+<TR><TD ALIGN="LEFT" BORDER="0">
+<FONT FACE="Roboto">image</FONT>
+</TD><TD ALIGN="LEFT">
+<FONT FACE="Roboto">CloudinaryField</FONT>
+</TD></TR>
+</TABLE>
+</details>
 
 ## Features
 The website is composed primarily of four main pages, the landing page, the post list pages, the post detail page and the profile page. To allow users to interact with the website there are links to the pages that allow users to post content, update or delete content, post comments and delete comments. In addition there are also authorization pages to allow users to register, login and logout. As the website is built using the Django framework there is an admin page which authorized users can access.  
