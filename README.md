@@ -366,6 +366,9 @@ time of submission.
     - Used to show responsiveness across different device sizes.
 - [Pip](https://pypi.org/project/pip/)
     - For installing python packages
+- [Graphiz](https://dreampuf.github.io/GraphvizOnline/)
+  - Used to generate the database entity relationship diagram.
+
 ## Testing
 
 ### W3C Validator
@@ -579,6 +582,7 @@ The steps below describe how to fork or clone the repository if desired.
 - How to add a dropdown in markdown on [DEV](https://dev.to/asyraf/how-to-add-dropdown-in-markdown-o78).
 - I referred to Code Institute "I think therefore I blog" walkthrough material to help me complete this project.
 - I referred to the Pic Pals project by fellow Code Institute student Jamie King on [GitHub](https://github.com/jkingportfolio/CI_PP4_Pic_Pals/tree/main) as inspiration for some of the features and layout of my website.
+- The [Wade Williams](https://wadewilliams.com/software/generating-erd-for-django-applications/) blog helped me create the entity realtionship diagram.
 
 ### Acknowledgements
 - My Mentor Chris Quinn for continuous helpful feedback.
