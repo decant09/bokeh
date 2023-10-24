@@ -13,7 +13,7 @@
                   src="{{ post.image.url }}"
                   alt="Image"
                   class="card-img-top"
-                  width="100%"
+                  width="100"
                 />
               </a>
             </div>
@@ -47,11 +47,13 @@
                   <div>
                     {% if "placeholder" in post.author.profile.image.url %}
                     <img
+                      alt="Profile image"
                       class="card-img-top rounded-circle post-profile-img"
                       src="https://res.cloudinary.com/dfsv2olye/image/upload/v1697560113/default_profile_mjdh7j.png"
                     />
                     {% else %}
                     <img
+                      alt="Profile image"
                       class="card-img-top rounded-circle post-profile-img"
                       src="{{ post.author.profile.image.url }}"
                     />
