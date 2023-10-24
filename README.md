@@ -635,62 +635,155 @@ The website is composed primarily of four main pages, the landing page, the post
 
 ### W3C Validator
 #### HTML
-- Base template (base.html)
-    - Result - No errors or warnings to show.
-    ![]()
 - Comment Delete Page (comment_confirm_delete.html)  
-  - Result - No errors or warnings to show.  
-    ![]()
-- Landng Page (index.html)  
-    - Result - No errors or warnings to show.  
-    ![]()
+    <details>
+    <summary>Result - No errors or warnings to show.</summary>
+    <img src="static/images/readme/testing/html/html_validator_comment_delete.png">
+    </details>  
+
+- Landng Page (index.html)
+    <details>
+    <summary>Result - No errors or warnings to show.</summary>
+    <img src="static/images/readme/testing/html/html_validator_index.png">
+    </details>  
+
 - Post Delete Page (post_confirm_delete.html)  
-    - Result - No errors or warnings to show.  
-    ![]()
+    <details>
+    <summary>Result - No errors or warnings to show.</summary>
+    <img src="static/images/readme/testing/html/html_validator_post_delete.png">
+    </details>
+
 - Post Detail Page (post_detail.html)  
-    - Result - No errors or warnings to show.  
-    ![]()
+    <details>
+    <summary>Result - No errors or warnings to show.</summary>
+    <img src="static/images/readme/testing/html/html_validator_post_detail.png">
+    </details>
+
 - Post Edit Page (post_edit.html)  
-    - Result - No errors or warnings to show.  
-    ![]()
+    <details>
+    <summary>Result - No errors or warnings to show.</summary>
+    <img src="static/images/readme/testing/html/html_validator_post_update.png">
+    </details>
+
 - Post Form Page (post_form.html)  
-    - Result - No errors or warnings to show.  
-    ![]()
+    <details>
+    <summary>Result - No errors or warnings to show.</summary>
+    <img src="static/images/readme/testing/html/html_validator_create_post.png">
+    </details>
+
 - Feed Page (post_list.html)  
-  - Result - No errors or warnings to show.  
-    ![]()
+    <details>
+    <summary>Result - No errors or warnings to show.</summary>
+    <img src="static/images/readme/testing/html/html_validator_post_list.png">
+    </details>
+
 - Profile Page (profile.html)  
-    - Result - No errors or warnings to show.  
-    ![]()
+    <details>
+    <summary>Result - No errors or warnings to show.</summary>
+    <img src="static/images/readme/testing/html/html_validator_profile.png">
+    </details>
+
 - User Post List Page (user_post_list.html)  
-  - Result - No errors or warnings to show.  
-    ![]()  
+    <details>
+    <summary>Result - No errors or warnings to show.</summary>
+    <img src="static/images/readme/testing/html/html_validator_user_post_list.png">
+    </details>
+
 - Signup Page (signup.html)  
-  - Result - No errors or warnings to show.  
-    ![]()  
+    <details>
+    <summary>Result - Error relating to Django Allauth code.</summary>
+    <img src="static/images/readme/testing/html/html_validator_signup.png">
+    </details>
+
 - Login Page (login.html)  
-  - Result - No errors or warnings to show.  
-    ![]()  
+    <details>
+    <summary>Result - No errors or warnings to show.</summary>
+    <img src="static/images/readme/testing/html/html_validator_login.png">
+    </details>
+
 - Logout Page (logout.html)  
-  - Result - No errors or warnings to show.  
-    ![]()  
+    <details>
+    <summary>Result - No errors or warnings to show.</summary>
+    <img src="static/images/readme/testing/html/html_validator_logout.png">
+    </details>  
+
+- 403 Page (403.html)
+    <details>
+    <summary>Result - No errors or warnings to show.</summary>
+    <img src="static/images/readme/testing/html/html_validator_403.png">
+    </details>
+
+- 403 Page (404.html)
+    <details>
+    <summary>Result - No errors or warnings to show.</summary>
+    <img src="static/images/readme/testing/html/html_validator_404.png">
+    </details>
+
 #### CSS
-Style Sheet
-<details>
-<summary>Result - No error found</summary>
-<img src="static/images/readme/testing/css/css.png">
-</details>  
+- Style Sheet
+    <details>
+    <summary>Result - No error found.</summary>
+    <img src="static/images/readme/testing/css/css.png">
+    </details>  
 
 ### JShint
 #### JavaScript
-Script Tags  
-<details>
-<summary>Result - No warnings</summary>
-<img src="static/images/readme/testing/javascript/jshint.png">
-</details>  
+- Script Tags  
+    <details>
+    <summary>Result - No warnings.</summary>
+    <img src="static/images/readme/testing/javascript/jshint.png">
+    </details>  
 
 ### PEP8 Validator
 #### Python
+- Project (bokey_photography) urls
+    <details>
+    <summary>All clear, no errors found.</summary>
+    <img src="static/images/readme/testing/python/project_urls.png">
+    </details>
+
+- Blog urls
+    <details>
+    <summary>All clear, no errors found.</summary>
+    <img src="static/images/readme/testing/python/project_urls.png">
+    </details>
+
+- Blog admin
+    <details>
+    <summary>All clear, no errors found.</summary>
+    <img src="static/images/readme/testing/python/project_admin.png">
+    </details>
+
+- Blog apps
+    <details>
+    <summary>All clear, no errors found.</summary>
+    <img src="static/images/readme/testing/python/project_apps.png">
+    </details>
+
+- Blog forms
+    <details>
+    <summary>All clear, no errors found.</summary>
+    <img src="static/images/readme/testing/python/project_forms.png">
+    </details>
+
+- Blog models
+    <details>
+    <summary>All clear, no errors found.</summary>
+    <img src="static/images/readme/testing/python/project_aodels.png">
+    </details>
+
+- Blog signals
+    <details>
+    <summary>All clear, no errors found.</summary>
+    <img src="static/images/readme/testing/python/project_signals.png">
+    </details>
+
+- Blog views
+    <details>
+    <summary>All clear, no errors found.</summary>
+    <img src="static/images/readme/testing/python/project_views.png">
+    </details>
+
 ### Accessibility
 #### WebAIM
 - I tested the contrast of the font colours used against their respective background colours using WebAIM.
