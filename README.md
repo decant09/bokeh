@@ -1,7 +1,7 @@
 # Bokeh Photography Blog
 What is  bokeh? A place for photography enthusiasts to upload, share and learn. Engage in conversation and find out how those magic moments were captured.
 
-![](/docs/testing/am_i_responsive.png)  
+![](/static/images/readme/responsive/responsive-black.png)  
 
 To visit the live link to bokeh on Heroku click [here](https://decant09-bokeh-photo-blog-0c5a394f8c26.herokuapp.com/).  
 
@@ -623,8 +623,8 @@ The website is composed primarily of four main pages, the landing page, the post
     - Used for the camera logo, github logo, comments, edit and delete icons.
 - Google Dev Tools
     - Used for responsiveness investigations, isolating code, troubleshooting, and testing features.
-- [Am I Responsive]()
-    - Used to show responsiveness across different device sizes.
+- [Website Mockup Generator](https://websitemockupgenerator.com/)
+    - Used to generate an image to show responsiveness across different device sizes.
 - [Pip](https://pypi.org/project/pip/)
     - For installing python packages
 - [Graphiz](https://dreampuf.github.io/GraphvizOnline/)
