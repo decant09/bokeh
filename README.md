@@ -786,9 +786,23 @@ The website is composed primarily of four main pages, the landing page, the post
 
 ### Accessibility
 #### WebAIM
-- I tested the contrast of the font colours used against their respective background colours using WebAIM.
-- Black text on light grey background
-    - [Result]() - # - Pass.  
+I tested for contrast with no errors showing. I tested a selection of pages as most pages use the same colour scheme and webaim was not able to access all pages because of login requirements.
+<details>
+<summary>Landing Page</summary>
+<img src="static/images/readme/testing/webaim/landing.png">
+</details>
+<details>
+<summary>Login Page</summary>
+<img src="static/images/readme/testing/webaim/login.png">
+</details>
+<details>
+<summary>Post Detail Page</summary>
+<img src="static/images/readme/testing/webaim/post_detail.png">
+</details>
+<details>
+<summary>Post List Page</summary>
+<img src="static/images/readme/testing/webaim/post_list.png">
+</details>
 
 #### Google Lighthouse
 Google Lighthouse was used to test for accessibility for each page.
