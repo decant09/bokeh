@@ -45,6 +45,7 @@ To visit the live link to bokeh on Heroku click [here](https://decant09-bokeh-ph
       - [CSS](#css)
     - [JShint](#jshint)
       - [JavaScript](#javascript)
+    - [PEP8 Validator](#pep8-validator) 
     - [Accessibility](#accessibility)
       - [WebAIM](#webaim)
       - [Google Lighthouse](#google-lighthouse)
@@ -674,14 +675,22 @@ The website is composed primarily of four main pages, the landing page, the post
   - Result - No errors or warnings to show.  
     ![]()  
 #### CSS
-- Style Sheet
-    - Result - No errors found.  
-    ![]()  
+Style Sheet
+<details>
+<summary>Result - No error found</summary>
+<img src="static/images/readme/testing/css/css.png">
+</details>  
+
 ### JShint
 #### JavaScript
-- Script
-    - Result - No errors or warnings.  
-    ![]()  
+Script Tags  
+<details>
+<summary>Result - No warnings</summary>
+<img src="static/images/readme/testing/javascript/jshint.png">
+</details>  
+
+### PEP8 Validator
+#### Python
 ### Accessibility
 #### WebAIM
 - I tested the contrast of the font colours used against their respective background colours using WebAIM.
