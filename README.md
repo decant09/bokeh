@@ -45,7 +45,8 @@ To visit the live link to bokeh on Heroku click [here](https://decant09-bokeh-ph
       - [CSS](#css)
     - [JShint](#jshint)
       - [JavaScript](#javascript)
-    - [PEP8 Validator](#pep8-validator) 
+    - [PEP8 Validator](#pep8-validator)
+      - [Python](#python)
     - [Accessibility](#accessibility)
       - [WebAIM](#webaim)
       - [Google Lighthouse](#google-lighthouse)
@@ -947,9 +948,52 @@ fields behave as intended.
 
 ## Deployment and Local Development
 ### Deployment
-The site was deployed to Heroku pages and the following steps were followed to do so:
+The site was deployed to Heroku and the following steps were followed to do so:
 
-[link to heroku]().
+- Login to your [Heroku](https://www.heroku.com/) account, or create an account.
+- To create a new app click the "New" button in the upper right hand corner and select "Create new app".
+- Choose an app name, select your region and click "Create app". The app is created to return to later.
+- Next a [Cloudinary](https://cloudinary.com/) account will be required as Cloudinary is used to host the images of the website.
+- Login into Cloudinary or you can create an account for free.
+- Navigate to the dashboard and copy and store the value of the "API Environment Variable" and be sure to include cloudinary:// at the start, this will be used in the Heroku Config Vars.
+- An [ElephantSQL](https://www.elephantsql.com/) account will be required as ElephantSQL is used to host the database.
+- Login to ElephantSQL or create an account for free.
+- Click on "Create New Instance".
+- Name your instance, select the Tiny Turtle plan which is free, and leave the input tags blank.
+- Select the region and choose the nearest data centre to your location.
+- Click "Review" and then click "Create instance" if details are as intended.
+- In the Instances section click on the instance name that was just created.
+- In the Details section click on the copy icon located next to the URL. This will be used in the Heroku Config Vars.
+- Back in Heroku slect the app that you just set up.
+- In the settings tab of the app click on "Reveal Config Vars" and store the required config var keys and values as below:
+    - CLOUDINARY_URL: *Cloudinary URL as obtained above*
+    - DATABASE_URL: *ElephantSQL postgres database URL as obtained above*
+    - PORT: 8000
+    - DISABLE_COLLECTSTATIC: 1 (This is left in place during development but must be removed befored deployment)
+- Now in your development environment, inside the Django app repository, create a new file called env.py. Within this file import the os library and set the environment variable for the CLOUDINARY_URL and DATABASE_URL as:
+     - os.environ["CLOUDINARY_URL"]= "*Cloudinary URL as obtained above*"
+     - os.environ["DATABASE_URL"]= "*ElephantSQL postgres database URL as obtained above*"
+- Add a secret key to the app using:
+    - os.environ["SECRET_KEY"] = "*your secret key goes here*"
+- Add the secret key just created to the Heroku Config Vars as SECRET_KEY for the KEY value and the secret key value you created as the VALUE.
+- In the settings.py file within the django app, import Path from pathlib, import os and import dj_database_url.
+- Insert the line:
+  -  if os.path.isfile("env.py"): import env
+- Remove the insecure secret key that django has in the settings file by default and replace it with SECRET_KEY = os.environ.get('SECRET_KEY').
+- Replace the databases section with DATABASES = { 'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))} ensure the correct indentation for python is used.
+- In the terminal migrate the models over to the new database connection using "python3 manage.py makemigrations" and "python3 manage.py migrate".
+- Add the cloudinary libraries to the list of installed apps, the order they are inserted is important, 'cloudinary_storage' goes above 'django.contrib.staitcfiles' and 'cloudinary' goes below it.
+- In the Settings.py file - add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path.
+- Link the file to the templates directory in Heroku TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates').
+- Change the templates directory to TEMPLATES_DIR - 'DIRS': [TEMPLATES_DIR].
+- Add Heroku to the ALLOWED_HOSTS list the format will be the app name given in Heroku when creating the app followed by .herokuapp.com.
+- In your code editor, create three new top level folders, media, static, templates.
+- Create a new file on the top level directory - Procfile.
+- Within the Procfile add the code - "web: guincorn PROJECT_NAME.wsgi".
+- Set up your requiremtnts.txt file to save the libraries that will need to be installed by running "pip freeze -> requiremnts.txt".
+- In the terminal, add the changed files, commit and push to GitHub.
+- In Heroku, navigate to the deployment tab and deploy the branch manually - watch the build logs for any errors.
+- Heroku will now build the app for you. Once it has completed the build process you will see a 'Your App Was Successfully Deployed' message and a link to the app to visit the [live site](https://decant09-bokeh-photo-blog-0c5a394f8c26.herokuapp.com/).
 
 ### Local Development
 The steps below describe how to fork or clone the repository if desired.
