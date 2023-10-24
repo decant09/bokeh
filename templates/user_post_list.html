@@ -2,8 +2,9 @@
 <div class="container-fluid">
   {% with page_obj.paginator.count as total_user_posts %}
   <h3 class="mt-3">
-    {{total_user_posts}} post{{ total_user_posts|pluralize }} by {{
-    view.kwargs.username }}
+    {{total_user_posts}} post{{ total_user_posts|pluralize }} by
+    <!-- username -->
+    {{ view.kwargs.username }}
   </h3>
   {% endwith %}
   <hr />
@@ -46,9 +47,9 @@
                       {{ total_comments }}</a
                     >
                   </h5>
+                  {% endwith %}
                 </div>
               </div>
-              {% endwith %}
             </div>
           </div>
         </div>
