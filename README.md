@@ -17,6 +17,7 @@ To visit the live link to bokeh on Heroku click [here](https://decant09-bokeh-ph
     - [Design](#design)
       - [Colour Scheme](#colour-scheme)
       - [Typography](#typography)
+      - [Agile Development](#agile-development)
       - [Wireframes](#wireframes)
       - [Database Schema](#database-schema)
   - [Features](#features)
@@ -80,7 +81,7 @@ To visit the live link to bokeh on Heroku click [here](https://decant09-bokeh-ph
 ### Initial Discussion
 This website was created for a project submission to Code Institute for the Diploma in Full Stack Software Development
 (E-commerce Applications). The criteria for the submission were primarily that it be created using the Bootstrap and Django
-frameworks. It was also required to have create, read, update and delete (CRUD) funtionality for users who visit the website. We were presented with a few website formats to choose from and of these I chose a blog based format. I chose a photography based blog format as I have an interest in photography and having a website where users can share their expertise was one that appealed to me. Learning the basics of photography is a challenge and having a forum to pick up some tips from others with greater experience would be a great resource. The aim was to develop a blog that will either help people to have some fun or help to improve their understanding of photography. I chose to call it bokeh as it is a popular subject in photography.  
+frameworks. It was also required to have create, read, update and delete (CRUD) funtionality for users who visit the website. We were presented with a few website formats to choose from and of these I chose a blog based format. I chose a photography based blog format as I have an interest in photography and having a website where users can share their expertise was one that appealed to me. Learning the basics of photography is a challenge and having a forum to pick up some tips from others with greater experience would be a great resource. The aim was to develop a blog that will either help people to have some fun or help to improve their understanding of photography. I chose to call it bokeh as it is a popular subject in photography. 
 
 ### User Stories
 #### First Time Visitor Goals
@@ -123,6 +124,8 @@ I opted for a neutral colour scheme throughout the website mainly using greys, w
 I used a soft green colour to highlight the messages that are displayed to the user when they have performed actions successfully. I used red when highlighting actions that need to be addressed by the user, for example during the authentication process. I also used red as a warning colour to alert the user then they are about to delete content.
 #### Typography
 I chose to use the default font supplied with Bootstrap as I found it to be simple and geometrically attractive. I wanted a simple font where readability was a strong characteristic. I didn't want to use a font that overly styled so as not to detract from the photography posts.  
+#### Agile Development
+An agile development approach was taken to complete this project. A kanban board was created for user stories which were assigned to the different areas of the kanban depending on their status. The areas were "To Do", "In Progress", "Done" and "Future Implementation". The kanban can viewed on the [GitHub](https://github.com/users/decant09/projects/7/views/1) Projects Page.
 #### Wireframes
 Wireframes were created for the website layout. The layout is the same across different device screen sizes with the exception of the post list page. On small screen sizes the posts are in displayed in a single column as opposed to three columns on larger devices. The navigation links are also compressed into a dropdown menu on small screen sizes. I have included a mobile wireframe to show these representations.
 <details>
