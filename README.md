@@ -125,7 +125,13 @@ I used a soft green colour to highlight the messages that are displayed to the u
 #### Typography
 I chose to use the default font supplied with Bootstrap as I found it to be simple and geometrically attractive. I wanted a simple font where readability was a strong characteristic. I didn't want to use a font that overly styled so as not to detract from the photography posts.  
 #### Agile Development
-An agile development approach was taken to complete this project. A kanban board was created for user stories which were assigned to the different areas of the kanban depending on their status. The areas were "To Do", "In Progress", "Done" and "Future Implementation". The kanban can viewed on the [GitHub](https://github.com/users/decant09/projects/7/views/1) Projects Page.
+An agile development approach was taken to complete this project. A kanban board was created using GitHub Projects. User stories were assigned to the different areas of the kanban depending on their status. The areas were:
+- To Do
+- In Progress
+- Done
+- Future   
+
+The kanban can viewed [here](https://github.com/users/decant09/projects/7/views/1) on the GitHub Projects Page.
 #### Wireframes
 Wireframes were created for the website layout. The layout is the same across different device screen sizes with the exception of the post list page. On small screen sizes the posts are in displayed in a single column as opposed to three columns on larger devices. The navigation links are also compressed into a dropdown menu on small screen sizes. I have included a mobile wireframe to show these representations.
 <details>
