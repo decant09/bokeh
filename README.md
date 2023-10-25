@@ -60,7 +60,7 @@ To visit the live link to bokeh on Heroku click [here](https://decant09-bokeh-ph
       - [Comment Tests](#comment-tests)
       - [Profile Tests](#profile-tests)
       - [Admin Tests](#admin-tests)
-    - [Testing User Stories from User Experience (UX) Section](#testing-user-stories-from-user-experience-ux-section)
+    - [Testing User Stories from User Experience (UX)](#testing-user-stories-from-user-experience-ux)
       - [First Time Visitor Goals](#first-time-visitor-goals-1)
       - [Returning Visitor Goals](#returning-visitor-goals-1)
       - [Frequent Visitor Goals](#frequent-visitor-goals-1)
@@ -118,6 +118,9 @@ frameworks. It was also required to have create, read, update and delete (CRUD) 
 - I want to be able to delete my profile (future implementation).
 - I want to be able to create posts with a category attached so that I can see all posts in a given category in one location. (future implementation)
 - I want to be able to add a post to my favourites so that I can view all my favourite posts in one location (future implementation)
+
+[Back to top](#contents)
+
 ### Design
 #### Colour Scheme
 I opted for a neutral colour scheme throughout the website mainly using greys, whites, and blacks. I opted for this approach because the photography is the core feature of the website. The photography will supply a splash of colour and the neutral surrounds will help to highliht it.
@@ -378,6 +381,8 @@ Profile
 </TABLE>
 </details>
 
+[Back to top](#contents)
+
 ## Features
 The website is composed primarily of four main pages, the landing page, the post list pages, the post detail page and the profile page. To allow users to interact with the website there are links to the pages that allow users to post content, update or delete content, post comments and delete comments. In addition there are also authorization pages to allow users to register, login and logout. As the website is built using the Django framework there is an admin page which authorized users can access.  
 ### Landing Page  
@@ -598,6 +603,9 @@ The website is composed primarily of four main pages, the landing page, the post
 - I would like to create a favourites feature where the user could add a particular post to their favourites and view these all on one page.
 - I would like to have a feature where the user was able to delete their profile and account.
 - These features were intended to be implemented but I was not able to complete them in the time permitted.
+
+[Back to top](#contents)
+
 ##  Technologies Used
 ### Languages
 - HTML5
@@ -648,6 +656,8 @@ The website is composed primarily of four main pages, the landing page, the post
     - For installing python packages
 - [Graphiz](https://dreampuf.github.io/GraphvizOnline/)
   - Used to generate the database entity relationship diagram.
+
+[Back to top](#contents)
 
 ## Testing
 
@@ -895,6 +905,8 @@ Google Lighthouse was used to test for accessibility for each page.
     <img src="static/images/readme/testing/lighthouse/logout.png">
     </details>
 
+[Back to top](#contents)
+
 ### Manual
 - I used Google Dev Tools to test for screen responsiveness.  
 - I tested on different browsers (chrome, firefox, safari and edge) to ensure the website performs as expected across all of these.
@@ -911,6 +923,8 @@ Google Lighthouse was used to test for accessibility for each page.
 | User can create account | Pass |
 | User can log into account| Pass |
 | User can log out of account| Pass |
+| User can not sign up with an email currently in use | Pass |
+| User can not sign up with a username currently in use | Pass |
 
 ---
 
@@ -957,6 +971,7 @@ Google Lighthouse was used to test for accessibility for each page.
 | Only logged in user can create post | Pass |
 | Only author of post can edit post | Pass |
 | Only author of post can delete post | Pass |
+| Deleting a post deletes all of its data and linked comments | Pass |
 
 ---
 
@@ -967,7 +982,7 @@ Google Lighthouse was used to test for accessibility for each page.
 | Only approved comments are visible to all users | Pass |
 | Only logged in user can post a comment | Pass |
 | Only author of comment can delete comment | Pass |
-| Only author of post can delete post | Pass |
+| Deleting a comment only deletes the comment | Pass |
 
 ---
 
@@ -980,21 +995,27 @@ Google Lighthouse was used to test for accessibility for each page.
 | User can update edit their email address | Pass |
 | User cannot change username to one already in use | Pass|
 | User cannot change email to one already in use | Fail |
+| Deleting a profile only deletes the profile not the user | Pass |
+
+---
 
 #### Admin Tests
 
 | Test | Result  |
 |--|--|
-|Admin can add posts | Pass |
-|Admin can add comments | Pass |
-|Admin can update posts | Pass |
-|Admin can update comments | Pass |
-|Admin can approve comments | Pass |
-|Admin can update profiles | Pass |
-|Admin can delete posts | Pass |
-|Admin can delete comments | Pass |
-|Admin can delete profiles | Pass |
+| Admin can add posts | Pass |
+| Admin can add comments | Pass |
+| Admin can update posts | Pass |
+| Admin can update comments | Pass |
+| Admin can approve comments | Pass |
+| Admin can update profiles | Pass |
+| Admin can delete posts | Pass |
+| Admin can delete comments | Pass |
+| Admin can delete profiles | Pass |
+| Admin can delete users | Pass |
+| Deleting a user deleted all of their posts and comments also | Pass |
 
+[Back to top](#contents)
 
 ### Testing User Stories from User Experience (UX) 
 All images to support the testing have been documented previously in the Features section above. To avoid repitition of material I have not included theses images in this section. Please refer to the [Features](#features) section for the supporting images for the content addressed below.
@@ -1099,10 +1120,13 @@ All images to support the testing have been documented previously in the Feature
 - I want to be able to add a post to my favourites so that I can view all my favourite posts in one location (future implementation)
   - Unfortunately, I was not able to implement this feature in the given timeframe.
 
+[Back to top](#contents)
+
 ### Bugs
 #### Known
 - I was able to get the number of comments to display on the post list page beside the comment icon. However, this count includes all comments, approved or not. The issue here is that a post may display that there is one comment, but if that comment is not yet approved by the admin then it does not show up on the post detail page. So a user will see on the post list page that there is a comment, but when they go to the post detail, the comment is not there. I need to amend the view code for the post list page but I was not able to resolve this issue in the timeframe allowed.
 - When you access the modal function on the post detail page, the whole background is supposed to be white. Ob mobile however, if you scroll while the modal is showing then there is a small section below the modal which shows the content from the post detail page scrolling by. I was not sure what was causing then and did not have the opportunity to resolve it.
+- A user can update there email to one that is already in use by another user. I was not able to investigate this properly as I discovered quite late in the timeline of the project.
 #### Solved
 - After I created the user profile page I noticed I had set the email field to required. The user could not update their profile without supplying an email. However, during the registraion process you were not required to supply an email. I decided to have the email field as part of the registraion process by setting ACCOUNT_EMAIL_REQUIRED=True. This ensured continuity between the two areas. I referred to the [Django Allauth](https://docs.allauth.org/en/latest/account/configuration.html) configuration documentation to achieve this.
 - When uploading image files as a user on the website with a form I was encountering a "No file chosen" message. This was because I hadn't included the enctype="multipart/form-data" inside the form tag which I learned by reading this [stackoverflow](https://stackoverflow.com/questions/70566852/why-i-am-getting-no-file-chosen-error-while-uploading-image-in-django) conversation.
@@ -1115,6 +1139,8 @@ All images to support the testing have been documented previously in the Feature
 - I was having issues with the navigation bar where the active attribute would not move accordingly. I was using if statements to refer to the url when applying the active attribute but it would stay on the Feed link in the navigation bar. I was able to resolve it by watching the [YouTube](https://www.youtube.com/watch?v=XqTmpbS7FJY&t=3s) video by Django World. I was able to use "request.path == /post-list/" within the if statement and then applying the relevant url segment for each link.
 - I was having misleading logout messages appear on the landing page. This was because my landing page is a standalone page which does not use the base template. I had not included the messages code from the base template on the index page (landing page). I was able to solve this by reading the thread on [GitHub](https://github.com/pennersr/django-allauth/issues/2031
 ).
+
+[Back to top](#contents)
 
 ## Deployment and Local Development
 ### Deployment
@@ -1186,6 +1212,8 @@ The steps below describe how to fork or clone the repository if desired.
 9. Type "git clone" into the terminal, then paste the URL you copied in step 6.
 10. Press **Enter** to create your local clone.
 
+[Back to top](#contents)
+
 ## Credits
 ### Code Used
 - To add the rules modal I used code from the [W3Schools'](https://www.w3schools.com/howto/howto_css_modals.asp) page:
@@ -1202,14 +1230,17 @@ The steps below describe how to fork or clone the repository if desired.
 - When achieving the expand text on hover feature when hovering over the GitHub icon link in the footer I referred to [Codepen](https://codepen.io/shettytejas/pen/wvdVLwB).
 - To have the footer remain at the bottom of the page using Bootstrap I referred to [Radu](https://radu.link/make-footer-stay-bottom-page-bootstrap/).
 - For help creating a landing page and with the views.py and url.py code I referred to [DEV](https://dev.to/hmlon/creating-a-landing-page-in-django-20pg).
-- To get the comment count to display I referred to Nutan on [Medium]().
+- To get the comment count to display I referred to Nutan on [Medium](https://medium.com/@nutanbhogendrasharma/creating-a-comment-system-to-the-article-in-django-part-8-ba9d8067bb2).
 - To help create the user profile model I referred to [PythonTutorial](https://www.pythontutorial.net/django-tutorial/django-user-profile/)
 - How to add a dropdown in markdown on [DEV](https://dev.to/asyraf/how-to-add-dropdown-in-markdown-o78).
 - I referred to Code Institute "I think therefore I blog" walkthrough material to help me complete this project.
-- I referred to the Pic Pals project by fellow Code Institute student Jamie King on [GitHub](https://github.com/jkingportfolio/CI_PP4_Pic_Pals/tree/main) as inspiration for some of the features and layout of my website.
+- I referred to the Pic Pals project by fellow Code Institute student Jamie King on [GitHub](https://github.com/jkingportfolio/CI_PP4_Pic_Pals/tree/main) as inspiration for some of the features and layout of my website and for my README.
 - The [Wade Williams](https://wadewilliams.com/software/generating-erd-for-django-applications/) blog helped me create the entity realtionship diagram.
+- I referenced Alan Bushell's PP4 [La Cocina del Diablo](https://github.com/Alan-Bushell/la-cocina-del-diablo) README for help developing my own.
 
 ### Acknowledgements
 - My Mentor Chris Quinn for continuous helpful feedback.
 - Tutor support at Code Institute for their amazing support.
-- Alan Bushell at Code Institute for guiding the class in our weekly stand-ups.https://medium.com/@nutanbhogendrasharma/creating-a-comment-system-to-the-article-in-django-part-8-ba9d8067bb2
+- Alan Bushell at Code Institute for guiding the class in our weekly stand-ups.
+
+[Back to top](#contents)
