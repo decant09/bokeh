@@ -91,7 +91,7 @@ frameworks. It was also required to have create, read, update and delete (CRUD) 
 - I want the website to be responsive to the device screen size that I am using.
 - I want to be able to explore the website without registering or signing up.
 - I want a feed page to display all posts with the most recent posts to be displayed at the top.
-- I want the feed page to be paginated to that I don't hhve to scroll to see all posts.
+- I want the feed page to be paginated so that I don't have to scroll to see all posts.
 - I want to be able to enlarge post images to the see the detail more clearly.
 - I want to see who made the post, and when, by having a username, profile image and date displayed beside the post.
 - I want the post to have a title.
@@ -103,7 +103,7 @@ frameworks. It was also required to have create, read, update and delete (CRUD) 
 - I want to be able to register to the website and signin so that I can access extra features.
 - I want a message to be displayed if I haven't completed the signup process correctly and what actions I need to take.
 - I want to be able to signout so that my account is secured.
-- I want success messagest to appear on signing in and out.
+- I want success messages to appear on signing in and out.
 - I want a profile to be automatically created once I register.
 - I want a default profile image to be displayed if I do not want to upload an image to my profile.
 - I want to have a username and not have to supply my first and last names.
@@ -113,22 +113,22 @@ frameworks. It was also required to have create, read, update and delete (CRUD) 
 - I want to have autonomy over posts I have made and be able to update or delete them if I desire.
 - I want to have autonomy over comments I have made and be able to delete them if I desire.
 - I want a page to be displayed if I click the delete icon warning me that I am about to delete content before I proceed.
-- I want success messages to appear when I have created, updated ot deleted content.
+- I want success messages to appear when I have created, updated or deleted content.
 - I want the comments to need prior approval from the admin before appearing on the website.
 - I want to be able to delete my profile (future implementation).
-- I want to be able to create posts with a category attached so that I can see all posts in a given category in one location. (future implementation)
-- I want to be able to add a post to my favourites so that I can view all my favourite posts in one location (future implementation)
+- I want to be able to create posts with a category attached so that I can see all posts in a given category in one location (future implementation).
+- I want to be able to add a post to my favourites so that I can view all my favourite posts in one location (future implementation).
 
 [Back to top](#contents)
 
 ### Design
 #### Colour Scheme
-I opted for a neutral colour scheme throughout the website mainly using greys, whites, and blacks. I opted for this approach because the photography is the core feature of the website. The photography will supply a splash of colour and the neutral surrounds will help to highliht it.
-I used a soft green colour to highlight the messages that are displayed to the user when they have performed actions successfully. I used red when highlighting actions that need to be addressed by the user, for example during the authentication process. I also used red as a warning colour to alert the user then they are about to delete content.
+I opted for a neutral colour scheme throughout the website mainly using greys, whites, and blacks. I opted for this approach because the photography is the core feature of the website. The photography will supply a splash of colour and the neutral surrounds will help to highlight it.
+I used a soft green colour to highlight the messages that are displayed to the user when they have performed actions successfully. I used red when highlighting actions that need to be addressed by the user, for example during the authentication process. I also used red as a warning colour to alert the user when they are about to delete content.
 #### Typography
-I chose to use the default font supplied with Bootstrap as I found it to be simple and geometrically attractive. I wanted a simple font where readability was a strong characteristic. I didn't want to use a font that overly styled so as not to detract from the photography posts.  
+I chose to use the default font supplied with Bootstrap as I found it to be simple and geometrically attractive. I wanted a simple font where readability was a strong characteristic. I didn't want to use a font that is overly styled so as not to detract from the photography posts.  
 #### Agile Development
-An agile development approach was taken to complete this project. A kanban board was created using GitHub Projects. User stories were assigned to the different areas of the kanban depending on their status. The areas were:
+An agile development approach was taken to create this project. A kanban board was created using GitHub Projects. User stories were assigned to the different areas of the kanban depending on their status. The areas were:
 - To Do
 - In Progress
 - Done
@@ -136,7 +136,7 @@ An agile development approach was taken to complete this project. A kanban board
 
 The kanban can viewed [here](https://github.com/users/decant09/projects/7/views/1) on the GitHub Projects Page.
 #### Wireframes
-Wireframes were created for the website layout. The layout is the same across different device screen sizes with the exception of the post list page. On small screen sizes the posts are in displayed in a single column as opposed to three columns on larger devices. The navigation links are also compressed into a dropdown menu on small screen sizes. I have included a mobile wireframe to show these representations.
+Wireframes were created for the website layout. The layout is the same across different device screen sizes with the exception of the post list page. On small screen sizes the posts are displayed in a single column as opposed to three columns on larger devices. The navigation links are also compressed into a dropdown menu on small screen sizes. I have included a mobile wireframe to show these representations.
 <details>
 <summary>Landing Page</summary>
 <img src="static/images/readme/wireframes/landing_page.png">
@@ -191,13 +191,13 @@ Wireframes were created for the website layout. The layout is the same across di
 </details>  
 
 #### Database Schema
-The database models for this project are shown in the schema below and were created using [Graphviz](https://dreampuf.github.io/GraphvizOnline/). I have included flowchart diagrams to show how the different models relate to each other. The master flowchart shows all of the extended models in the project, some of which were not used but came with imports, for example the social models which came with the Django Allauth import. I have icluded a more refined flowchart showing the models I created and how they relate to each other. I have also included the model structure in tabular form.
+The database models for this project are shown in the schema below and were created using [Graphviz](https://dreampuf.github.io/GraphvizOnline/). I have included flowchart diagrams to show how the different models relate to each other. The master flowchart shows all of the extended models in the project, some of which were not used but came with the Django Aallauth import, for example the social models. I have included a more refined flowchart showing the models I created and how they relate to each other. I have also included the model structure in tabular form.
 <details>
 <summary>Master Flowchart</summary>
 <img src="static/images/readme/database/model_flowchart.png">
 </details>  
 <details>
-<summary>Reduced Flowchart</summary>
+<summary>Refined Flowchart</summary>
 <img src="static/images/readme/database/model_flowchart_reduced.png">
 </details>
 <details>
@@ -414,10 +414,10 @@ The website is composed primarily of four main pages, the landing page, the post
 - The user can access the different pages by clicking on the "next" or "prev" buttons beneath the group of six posts. The "next" button appears depending on whether or not there are enough posts to populate a new page.
 - Each post is presented in a card like format, the main body of which is the image.
 - Beneath the image there is an area that displays the post title along with a comments icons displaying the number of comments on the post.
-- Beneath this the username of the user who posted is displayed, along with their image, if one was uploaded to their profil and a default image if not.
+- Beneath this the username of the user who posted is displayed, along with their image, if one was uploaded to their profile and a default image if not.
 - The date posted is also displayed.
 - Clicking on the image, the title or the comments icon takes you to the post detail page.
-- Clicking on the username takes you the page displaying all posts by that user.
+- Clicking on the username takes you to the page displaying all posts by that user.
     <details>
     <summary>Post List Page</summary>
     <img src="static/images/readme/screenshots/post_list_page.jpeg">
@@ -428,7 +428,7 @@ The website is composed primarily of four main pages, the landing page, the post
 - It is structured in the same ordered and paginated way as the main post list page.
 - At the top of the page the number of posts by the user is displayed.
 - The information displayed beneath the image is stripped down to display just the post title and the comments icon with the number of comments.
-- Clicking on the image, post title and comments icon takes you to the post detail page.
+- Clicking on the image, post title or the comments icon takes you to the post detail page.
     <details>
     <summary>User Post List Page</summary>
     <img src="static/images/readme/screenshots/user_post_list_page.png">
@@ -436,10 +436,10 @@ The website is composed primarily of four main pages, the landing page, the post
 ### Post Detail Page
 - The post detail page contains an expanded version of the card displayed on the post list page for a particular post.
 - This page is accessible whether or not you are logged in.
-- There is an expand icon in the top right corner of the image with the text "click image" beside to let the user know to click the image to expand. This expands the image in a modal to be view on the fullscreen. Clicking the anywhere on the screen closes the modal.
-- Beneath this there a section for a description of the post. The details of the description are displayed if there was one supplied by the author of the post.
-- If the user who created the post is logged in, then post edit and delete icons are displayed to allow the user to perform the actions if desired.
-- These icons are not displated and the actions are noy available if the user did not create the post.
+- There is an expand icon in the top right corner of the image with the text "click image" beside it to let the user know to click the image to expand it. This expands the image in a modal to be view on the fullscreen. Clicking anywhere on the screen closes the modal.
+- Beneath this there is a section for a description of the post. The details of the description are displayed if there was one supplied by the author of the post.
+- If the user who created the post is logged in, then post edit and delete icons are displayed to allow the user to perform these actions if desired.
+- These icons are not displayed and the actions are noy available if the user did not create the post.
 - The comments are displayed at the bottom of the page, if there are any. They are ordered with the oldest appearing at the top of the page.
 - If logged in there is a form providing the user with an opportunity to post a comment.
     <details>
@@ -470,7 +470,7 @@ The website is composed primarily of four main pages, the landing page, the post
 - The profile page contains the information about the user and is automatically created once a new user registers with the website.
 - It is only accessible by the logged in user who created it.
 - The profile image is displayed if one is uploaded and a default one if not.
-- An about the user section, username and email are displayed and there is an opportunity to update these if desired.
+- An about user section, username and email are displayed and there is an opportunity to update these if desired.
 - If the profile is updated succesffully a message appears confirming this which disappears after three seconds.
     <details>
     <summary>Profile Page</summary>
@@ -507,10 +507,10 @@ The website is composed primarily of four main pages, the landing page, the post
     <img src="static/images/readme/screenshots/post_update_success_message.png">
     </details>
 ### Delete Post Page
-- The uelete post page is accessible only by the user who created the post.
+- The delete post page is accessible only by the user who created the post.
 - An edit and delete icon appear on the post detail page if the user who is logged in uploaded that post.
 - Clicking on the delete icon takes the use to the post delete page confirming the post is intended to be deleted.
-- If not intended the user can return to the post delete page.
+- If not intended the user can return to the post detail page.
 - If the post is deleted the associated comments are also deleted and the user is returned to the main post list page.
     <details>
     <summary>Post Delete Page</summary>
@@ -526,8 +526,8 @@ The website is composed primarily of four main pages, the landing page, the post
 - Once a comment is posted a success message appears at the top of the post detail page which disappears after three seconds.
 - At the bottom of the page in the comments section a message is displayed saying the comment is awaiting approval.
 - A comment will not appear until it has been approved by the admin.
-- If a comment that is displayed ias posted by the current logged in user a delete icon appears next to it allowing the user the opportunity to delete the comment if desitrd.
-- Clicking on the icon takes the suer to the comment delete page asking them if they are sure they would like to delete the comment or return back to the post.
+- If a comment that is displayed was posted by the current logged in user a delete icon appears next to it allowing the user the opportunity to delete the comment if desired.
+- Clicking on the icon takes the user to the comment delete page asking them if they are sure they would like to delete the comment or return back to the post.
 - If deleted, the user is taken to the post list page with a disappearing message confirming the comment was deleted.
     <details>
     <summary>Comment form</summary>
@@ -554,10 +554,10 @@ The website is composed primarily of four main pages, the landing page, the post
     <img src="static/images/readme/screenshots/comment_delete_success_message.png">
     </details>
 ### Signup Page
-- The signup page is accessedfrom the navigation bar when a user is not logged in.
-- Clicking on the "Register" link opens the page
-- The user is required to proved a username, email address and password.
-- If the these fields are not filled out correctly error messages are displayed.
+- The signup page is accessed from the navigation bar when a user is not logged in.
+- Clicking on the "Register" link opens the page.
+- The user is required to proved a username, email address and password (twice to ensure correct).
+- If these fields are not filled out correctly error messages are displayed.
 - Once completed correctly and the "Sign Up" button clicked the user is logged in and the user is taken to the post list page.
 - A disappearing login success message is displayed as shown in the next section (login success message).
     <details>
@@ -587,7 +587,7 @@ The website is composed primarily of four main pages, the landing page, the post
     </details>
 ### Logout Page
 - The logout page is accessed by logged in users clicking the "Logout" link in the navigation bar.
-- The user is taken to the logout page where there are asked to confirm their logout by clicking "Sign Out".
+- The user is taken to the logout page where they are asked to confirm their logout by clicking "Sign Out".
 - If they do not wish to logout they can click on any of the links in the navigation bar.
 - If they confirm logout the user is taken to the landing page and a disappearing logout success message is displayed.
     <details>
@@ -602,7 +602,7 @@ The website is composed primarily of four main pages, the landing page, the post
 - I would like to create a category model where the user could choose from a category when uploading their post. The category would be displayed with the post detail. Clicking on the category would take the user to that category's page and allow the user to see all posts under that category.
 - I would like to create a favourites feature where the user could add a particular post to their favourites and view these all on one page.
 - I would like to have a feature where the user was able to delete their profile and account.
-- These features were intended to be implemented but I was not able to complete them in the time permitted.
+- These features were intended to be implemented but I was not able to complete them in the timeframe permitted.
 
 [Back to top](#contents)
 
@@ -637,7 +637,7 @@ The website is composed primarily of four main pages, the landing page, the post
 - [Heroku](https://www.heroku.com/)
     - Used to deploy the project.
 - Git
-    - Used for version control by utilising the Gitpod and Codeanywhere terminals to commit to Git and push to GitHub.
+    - Used for version control by utilising the Codeanywhere terminal to commit to Git and push to GitHub.
 - GitHub
     - Used to store the code of the project after being pushed from Git.
 - [Icons8](https://icons8.com/icons/set/camera-favicon).
@@ -653,7 +653,7 @@ The website is composed primarily of four main pages, the landing page, the post
 - [Website Mockup Generator](https://websitemockupgenerator.com/)
     - Used to generate an image to show responsiveness across different device sizes.
 - [Pip](https://pypi.org/project/pip/)
-    - For installing python packages
+    - For installing python packages.
 - [Graphiz](https://dreampuf.github.io/GraphvizOnline/)
   - Used to generate the database entity relationship diagram.
 
@@ -741,7 +741,7 @@ The website is composed primarily of four main pages, the landing page, the post
     <img src="static/images/readme/testing/html/html_validator_403.png">
     </details>
 
-- 403 Page (404.html)
+- 404 Page (404.html)
     <details>
     <summary>Result - No errors or warnings to show.</summary>
     <img src="static/images/readme/testing/html/html_validator_404.png">
@@ -911,9 +911,7 @@ Google Lighthouse was used to test for accessibility for each page.
 - I used Google Dev Tools to test for screen responsiveness.  
 - I tested on different browsers (chrome, firefox, safari and edge) to ensure the website performs as expected across all of these.
 - I tested on Android and iPhone devices.
-- I spellchecked the website and the readme using [Online Spellcheck](https://www.online-spellcheck.com/). I also used
-[Webpage Spell-Check](https://chrome.google.com/webstore/detail/webpage-spell-check/mgdhaoimpabdhmacaclbbjddhngchjik), a google chrome extension.
-- I used [Grammarly](https://www.grammarly.com/) to check for grammatical errors.
+- I used [Grammarly](https://www.grammarly.com/) to spellcheck and check for grammatical errors.
 - All features of the website were manually tested and documented in the following sections.
 
 #### Account Registration Tests
@@ -934,8 +932,10 @@ Google Lighthouse was used to test for accessibility for each page.
 |--|--|
 | User can navigate to Feed | Pass |
 | User can navigate to login page | Pass |
+| Non logged in user can navigate to register page | Pass |
 | Logged in user can access their profile | Pass |
 | Logged in user can navigate to logout page | Pass |
+| Logo takes user to landing page | Pass |
 | SuperUser can access admin panel | Pass |
 | 403 page displayed as intended | Pass |
 | 404 page displayed as intended | Pass |
@@ -948,7 +948,7 @@ Google Lighthouse was used to test for accessibility for each page.
 |--|--|
 | All buttons act as intended | Pass |
 | All links act as intended | Pass |
-| Image links act intended | Pass |
+| Image links act as intended | Pass |
 | Image modal acts as intended | Pass |
 
 ---
@@ -957,7 +957,6 @@ Google Lighthouse was used to test for accessibility for each page.
 
 | Test |Result  |
 |--|--|
-| Non logged in user cannot create a post | Pass |
 | Non logged in user cannot access profile page | Pass|
 | Non superuser cannot access admin panel |Pass|
 
@@ -992,7 +991,7 @@ Google Lighthouse was used to test for accessibility for each page.
 |--|--|
 | User can update their username from the profile page | Pass |
 | User can update/add a profile image from the profile page | Pass |
-| User can update edit their email address | Pass |
+| User can update edit their email address from the profile page | Pass |
 | User cannot change username to one already in use | Pass|
 | User cannot change email to one already in use | Fail |
 | Deleting a profile only deletes the profile not the user | Pass |
@@ -1013,7 +1012,7 @@ Google Lighthouse was used to test for accessibility for each page.
 | Admin can delete comments | Pass |
 | Admin can delete profiles | Pass |
 | Admin can delete users | Pass |
-| Deleting a user deleted all of their posts and comments also | Pass |
+| Deleting a user deletes all of their posts and comments also | Pass |
 
 [Back to top](#contents)
 
@@ -1021,7 +1020,7 @@ Google Lighthouse was used to test for accessibility for each page.
 All images to support the testing have been documented previously in the Features section above. To avoid repitition of material I have not included theses images in this section. Please refer to the [Features](#features) section for the supporting images for the content addressed below.
 #### First Time Visitor Goals
 - I want to know what the website is about upon arriving.
-  - There is a desciption of the website on the landing page
+  - There is a description of the website on the landing page
 - I want the website to be easily navigatable.
   -  There is a navigation bar at the top of the page and this in maintained throughout the website.
   -  Clicking on the navigation links takes the user to the relevant section of the website.
@@ -1031,40 +1030,40 @@ All images to support the testing have been documented previously in the Feature
   - Buttons change appearance when hovered over.
   - Text that contains a link changes colour and the cursor changes to pointer when hovered over.
   - The cursor changes to pointer when images that contain links are hovered over.
-  - Images that can be expanded have an prompt in the top right corner with the text "Click image" alongside an expand icon.
+  - Images that can be expanded have a prompt in the top right corner with the text "Click image" alongside an expand icon.
 - I want the website to be responsive to the device screen size that I am using.
   - The website is created using Bootstrap and is responsive across all devices.
 - I want to be able to explore the website without registering or signing up.
-  - A user who is not registered acn access the website but with limited funtionality.
-  - All posts and comments can be seen but can can not be contributed to.
+  - A user who is not registered can access the website but with limited funtionality.
+  - All posts and comments can be seen but can not be contributed to.
 - I want a feed page to display all posts with the most recent posts to be displayed at the top.
-  - There is a post list list page which is accessed throught the "Feed" link in the navigation bar.
+  - There is a post list list page which is accessed through the "Feed" link in the navigation bar.
   - The most recent post appears at the top of the page.
-- I want the feed page to be paginated to that I don't hhve to scroll to see all posts.
+- I want the feed page to be paginated so that I don't have to scroll to see all posts.
   - Posts are paginated with six posts per page.
   - On medium to large screen devices they appear in two rows by three columns.
   - On small screen devices they appear as a single column of six posts to improve the user experience.
-  - A "Next" button appears at bottom f the page if there are more posts than on the current page.
+  - A "Next" button appears at the bottom of the page if there are more posts than on the current page.
   - A "Prev" button takes the user back to the previous page if there is one.
-- I want to be able to enlarge post images to the see the detail more clearly.
-  - Clicking on an image takes the user to the psot detail page where an enlarged version of the image is available.
+- I want to be able to enlarge post images to see the detail more clearly.
+  - Clicking on an image takes the user to the post detail page where an enlarged version of the image is available.
   - An expand option is available on this page to have the image appear across the whole screen.
 - I want to see who made the post, and when, by having a username, profile image and date displayed beside the post.
   - Beneath the post image the title, username, and date posted are displayed.
   - The user's profile image is also show in a circle if one is supplied by the user, a default profile image is shown if not.
 - I want the post to have a title.
   - The post will have a title as this is a required field when a post is uploaded.
-  - This is then displayed along witht he post.
+  - This is then displayed along with the post.
 - I want to see if there are any comments on the post and for that to be visible with an icon showing the number of comments beside it.
   - There is a comment icon alongside the post title which displays the number of comments beside it.
 - I want to be able to navigate to where the comment content is displayed and for the oldest comment to be displayed at the top.
-  - By clicking the post image, post title text, or comment icon, the user is taken to the post detail page which shows the post's comments towards the bottom oof the page.
+  - By clicking the post image, post title text, or comment icon, the user is taken to the post detail page which shows the post's comments towards the bottom of the page.
   - The oldest comments are at the top of the feed.
 - I want to see if the author has posted a description or any extra information regarding the photo.
   - This is located on the post detail page in the description section which can be accessed as above.
   - A description is not a required field when uploading a post and will only appear if there was one uploaded.
-- If I like a particular photo I want to see all of the photos by that author on its own paginated.
-  - Click on the username, which is located as described above below the post image, takes the user to a page displaying all posts by that author.
+- If I like a particular photo I want to see all of the photos by that author on its own paginated page.
+  - Clicking on the username, which is located as described above below the post image, takes the user to a page displaying all posts by that author.
   - The most recent post appears first.
 #### Returning Visitor Goals
 - I want to be able to register to the website and signin so that I can access extra features.
@@ -1075,27 +1074,27 @@ All images to support the testing have been documented previously in the Feature
   - Once the details are entered correctly the new user is logged in.
 - I want to be able to signout so that my account is secured.
   - There is a "Logout" link in the navigation bar to allow the user to signout.
-  - Once clicked the user is taken to a page to confir they want to logout.
-- I want success messagest to appear on signing in and out.
-  - Disappearing success messages appear at the top op the page letting the user know they have signed in or signed out successfully.
+  - Once clicked the user is taken to a page to confirm they want to logout.
+- I want success messages to appear on signing in and out.
+  - Disappearing success messages appear at the top of the page letting the user know they have signed in or signed out successfully.
 - I want a profile to be automatically created once I register.
   - A profile is automatically created on registration and can be access once logged by clicking on the "Profile" link in the navigation bar.
 - I want a default profile image to be displayed if I do not want to upload an image to my profile.
   - A default user profile image is automatically assigned to the user's profile.
-  - This can be updated to a didfferent image is the user desires in the profile section which contains a form to allow the user to do so.
+  - This can be updated to a different image if the user desires in the profile section which contains a form to allow the user to do so.
 - I want to have a username and not have to supply my first and last names.
   - First and last names are not required during the registration process, only a username must be supplied.
 - I want only registered users to be able to contribute posts to the website.
   - To contribute a post to the website the "Post" link in the navigation bar is clicked.
   - This is only availabe when a user is logged in and therefore only logged in users can contribute posts.
 - I want only registered users to be able to comment on posts.
-  - Like for a post, the comment form is only available to logged in users.
+  - As with a post, the comment form is only available to logged in users.
   - The comment form appears below the comments on the post detail page.
   - Both features are protected by login requirements. If a user entered the url in their browser for the post feature, without being logged in, then they would be redirected to the login page.
 #### Frequent Visitor Goals
 - I want to have autonomy over posts I have made and be able to update or delete them if I desire.
   - An edit and delete icon appears next to a post title but only if the user who created the post is logged in at the time.
-  - This allows onlt the author of the post to be able to make changes to the post.
+  - This allows only the author of the post to be able to make changes to the post.
   - If a user enters the url to amend a post that is not theirs, then they are taken to a 403 not authorized page.
   - This page contains a redirect button for the landing page.
     <details>
@@ -1103,21 +1102,21 @@ All images to support the testing have been documented previously in the Feature
     <img src="static/images/readme/screenshots/403_page.png">
     </details>
 - I want to have autonomy over comments I have made and be able to delete them if I desire.
-  - Like with a post, a delete icon appears beside a comment only if the user who is logged in posted that comment.
+  - As with a post, a delete icon appears beside a comment only if the user who is logged in posted that comment.
   - It will not appear to users who are logged in and have not posted the comment or to users who are not logged in. 
 - I want a page to be displayed if I click the delete icon warning me that I am about to delete content before I proceed.
   - Clicking on the delete icon takes the user to a page to confirm that they would like to delete the comment.
-  - If they would not like to there is a button to return to the pst detail page.
+  - If they decide not to there is a button to return to the post detail page.
   - There is a button to confirm deletion.
-- I want success messages to appear when I have created, updated ot deleted content.
+- I want success messages to appear when I have created, updated or deleted content.
   - Disappearing success messages appear when all of these actions have been completed successfully.
 - I want the comments to need prior approval from the admin before appearing on the website.
-  - Once a comment has been posted a success message appears lettng the user know that the comment is awaiting approveal from the admin team.
+  - Once a comment has been posted a success message appears letting the user know that the comment is awaiting approveal from the admin.
 - I want to be able to delete my profile (future implementation).
   - Unfortunately, I was not able to implement this feature in the given timeframe.
-- I want to be able to create posts with a category attached so that I can see all posts in a given category in one location. (future implementation)
+- I want to be able to create posts with a category attached so that I can see all posts in a given category in one location (future implementation).
   - Unfortunately, I was not able to implement this feature in the given timeframe.
-- I want to be able to add a post to my favourites so that I can view all my favourite posts in one location (future implementation)
+- I want to be able to add a post to my favourites so that I can view all my favourite posts in one location (future implementation).
   - Unfortunately, I was not able to implement this feature in the given timeframe.
 
 [Back to top](#contents)
@@ -1125,18 +1124,19 @@ All images to support the testing have been documented previously in the Feature
 ### Bugs
 #### Known
 - I was able to get the number of comments to display on the post list page beside the comment icon. However, this count includes all comments, approved or not. The issue here is that a post may display that there is one comment, but if that comment is not yet approved by the admin then it does not show up on the post detail page. So a user will see on the post list page that there is a comment, but when they go to the post detail, the comment is not there. I need to amend the view code for the post list page but I was not able to resolve this issue in the timeframe allowed.
-- When you access the modal function on the post detail page, the whole background is supposed to be white. Ob mobile however, if you scroll while the modal is showing then there is a small section below the modal which shows the content from the post detail page scrolling by. I was not sure what was causing then and did not have the opportunity to resolve it.
-- A user can update there email to one that is already in use by another user. I was not able to investigate this properly as I discovered quite late in the timeline of the project.
+- When you access the modal function on the post detail page, the whole background is supposed to be white. However, on mobile, if you scroll while the modal is showing then there is a small section below the modal which shows the content from the post detail page scrolling by. I was not sure what was causing then and did not have the opportunity to resolve it.
+- In the profile page, a user can update their email to one that is already in use by another user. I was not able to investigate this properly as I discovered this quite late in the timeline of the project.
+- On safari, the navigation links appear to the left of the navigation bar beside the logo. This is not as intended as they should appear on the right of the navigation bar as they do on other browsers tested. I was not able to investigate htis fully in the timeframe permitted.
 #### Solved
 - After I created the user profile page I noticed I had set the email field to required. The user could not update their profile without supplying an email. However, during the registraion process you were not required to supply an email. I decided to have the email field as part of the registraion process by setting ACCOUNT_EMAIL_REQUIRED=True. This ensured continuity between the two areas. I referred to the [Django Allauth](https://docs.allauth.org/en/latest/account/configuration.html) configuration documentation to achieve this.
 - When uploading image files as a user on the website with a form I was encountering a "No file chosen" message. This was because I hadn't included the enctype="multipart/form-data" inside the form tag which I learned by reading this [stackoverflow](https://stackoverflow.com/questions/70566852/why-i-am-getting-no-file-chosen-error-while-uploading-image-in-django) conversation.
-- When creating a post as a user I noticed slug field was not being created. This was because I did not use slugify in the create_post view logic. I resolved this by referring to:
+- When creating a post as a user I noticed the slug field was not being created. This was because I did not use slugify in the create_post view logic. I resolved this by referring to:
   - Creating a slug in Django on [stackoverflow](https://stackoverflow.com/questions/837828/how-do-i-create-a-slug-in-django)
   - Autogenerating the slug on [stackoverflow](https://stackoverflow.com/questions/68897050/slug-not-auto-generate-after-add-page-in-django)
 - The comment count was displaying correctly on the post detail page however it was not displaying on the feed page. This was solved by accessing the value for the comment count by referring to the object (post) with "post.comment.count" instead of "comments.count" as used in the post detail page. This was achieved by reading the [stackoverflow](https://stackoverflow.com/questions/35941445/how-to-display-number-of-comments-in-django) thread on how to display the number of comments in Django.
   - This actually didn't fully solve the bug which I realised later on and have documented in the known bugs section above.
 - Upon clicking on the GitHub icon in the footer it would turn blue during the lagtime for the link to open. I used the :focus pseudo-class to resolve this from [stackoverflow](https://stackoverflow.com/questions/36644355/anchor-tag-colour-changes-to-blue-once-its-clicked).
-- I was having issues with the navigation bar where the active attribute would not move accordingly. I was using if statements to refer to the url when applying the active attribute but it would stay on the Feed link in the navigation bar. I was able to resolve it by watching the [YouTube](https://www.youtube.com/watch?v=XqTmpbS7FJY&t=3s) video by Django World. I was able to use "request.path == /post-list/" within the if statement and then applying the relevant url segment for each link.
+- I was having issues with the navigation bar where the active attribute would not move accordingly. I was using "if" statements to refer to the url when applying the active attribute but it would stay on the Feed link in the navigation bar. I was able to resolve this by watching the [YouTube](https://www.youtube.com/watch?v=XqTmpbS7FJY&t=3s) video by Django World. I was able to use "request.path == /post-list/" within the if statement and then applying the relevant url segment for each link.
 - I was having misleading logout messages appear on the landing page. This was because my landing page is a standalone page which does not use the base template. I had not included the messages code from the base template on the index page (landing page). I was able to solve this by reading the thread on [GitHub](https://github.com/pennersr/django-allauth/issues/2031
 ).
 
@@ -1159,14 +1159,14 @@ The site was deployed to Heroku and the following steps were followed to do so:
 - Select the region and choose the nearest data centre to your location.
 - Click "Review" and then click "Create instance" if details are as intended.
 - In the Instances section click on the instance name that was just created.
-- In the Details section click osn the copy icon located next to the URL. This will be used in the Heroku Config Vars.
-- Back in Heroku slect the app that you just set up.
+- In the Details section click on the copy icon located next to the URL. This will be used in the Heroku Config Vars.
+- Back in Heroku select the app that you just set up.
 - In the settings tab of the app click on "Reveal Config Vars" and store the required config var keys and values as below:
     - CLOUDINARY_URL: *Cloudinary URL as obtained above*
     - DATABASE_URL: *ElephantSQL postgres database URL as obtained above*
     - PORT: 8000
     - DISABLE_COLLECTSTATIC: 1 (This is left in place during development but must be removed befored deployment)
-- Now in your development environment, inside the Django app repository, create a new file called env.py. Within this file import the os library and set the environment variable for the CLOUDINARY_URL and DATABASE_URL as:
+- Now, in your development environment, inside the Django app repository, create a new file called env.py. Within this file import the os library and set the environment variable for the CLOUDINARY_URL and DATABASE_URL as:
      - os.environ["CLOUDINARY_URL"]= "*Cloudinary URL as obtained above*"
      - os.environ["DATABASE_URL"]= "*ElephantSQL postgres database URL as obtained above*"
 - Add a secret key to the app using:
@@ -1175,18 +1175,23 @@ The site was deployed to Heroku and the following steps were followed to do so:
 - In the settings.py file within the django app, import Path from pathlib, import os and import dj_database_url.
 - Insert the line:
   -  if os.path.isfile("env.py"): import env
-- Remove the insecure secret key that django has in the settings file by default and replace it with SECRET_KEY = os.environ.get('SECRET_KEY').
-- Replace the databases section with DATABASES = { 'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))} ensure the correct indentation for python is used.
+- Remove the insecure secret key that django has in the settings file by default and replace it with:
+  - SECRET_KEY = os.environ.get('SECRET_KEY').
+- Replace the databases section with:
+  - DATABASES = { 'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}
+- Ensure the correct indentation for python is used.
 - In the terminal migrate the models over to the new database connection using "python3 manage.py makemigrations" and "python3 manage.py migrate".
 - Add the cloudinary libraries to the list of installed apps, the order they are inserted is important, 'cloudinary_storage' goes above 'django.contrib.staitcfiles' and 'cloudinary' goes below it.
 - In the Settings.py file - add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path.
 - Link the file to the templates directory in Heroku TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates').
 - Change the templates directory to TEMPLATES_DIR - 'DIRS': [TEMPLATES_DIR].
-- Add Heroku to the ALLOWED_HOSTS list the format will be the app name given in Heroku when creating the app followed by .herokuapp.com.
+- Add Heroku to the ALLOWED_HOSTS list, the format will be the app name given in Heroku when creating the app followed by ".herokuapp.com".
 - In your code editor, create three new top level folders, media, static, templates.
 - Create a new file on the top level directory - Procfile.
-- Within the Procfile add the code - "web: guincorn PROJECT_NAME.wsgi".
-- Set up your requiremtnts.txt file to save the libraries that will need to be installed by running "pip freeze -> requiremnts.txt".
+- Within the Procfile add the code:
+  - web: guincorn PROJECT_NAME.wsgi
+- Set up your requiremtnts.txt file to save the libraries that will need to be installed by running the following command in the terminal:
+  - "pip freeze -> requiremnts.txt".
 - In the terminal, add the changed files, commit and push to GitHub.
 - In Heroku, navigate to the deployment tab and deploy the branch manually - watch the build logs for any errors.
 - Heroku will now build the app for you. Once it has completed the build process you will see a 'Your App Was Successfully Deployed' message and a link to the app to visit the [live site](https://decant09-bokeh-photo-blog-0c5a394f8c26.herokuapp.com/).
@@ -1232,11 +1237,11 @@ The steps below describe how to fork or clone the repository if desired.
 - For help creating a landing page and with the views.py and url.py code I referred to [DEV](https://dev.to/hmlon/creating-a-landing-page-in-django-20pg).
 - To get the comment count to display I referred to Nutan on [Medium](https://medium.com/@nutanbhogendrasharma/creating-a-comment-system-to-the-article-in-django-part-8-ba9d8067bb2).
 - To help create the user profile model I referred to [PythonTutorial](https://www.pythontutorial.net/django-tutorial/django-user-profile/)
-- How to add a dropdown in markdown on [DEV](https://dev.to/asyraf/how-to-add-dropdown-in-markdown-o78).
-- I referred to Code Institute "I think therefore I blog" walkthrough material to help me complete this project.
-- I referred to the Pic Pals project by fellow Code Institute student Jamie King on [GitHub](https://github.com/jkingportfolio/CI_PP4_Pic_Pals/tree/main) as inspiration for some of the features and layout of my website and for my README.
-- The [Wade Williams](https://wadewilliams.com/software/generating-erd-for-django-applications/) blog helped me create the entity realtionship diagram.
-- I referenced Alan Bushell's PP4 [La Cocina del Diablo](https://github.com/Alan-Bushell/la-cocina-del-diablo) README for help developing my own.
+- To learn how to add a dropdown in markdown I referred to [DEV](https://dev.to/asyraf/how-to-add-dropdown-in-markdown-o78).
+- I referred to the Code Institute "I think therefore I blog" walkthrough material to help me complete this project.
+- I referred to the Pic Pals project by fellow Code Institute student Jamie King on [GitHub](https://github.com/jkingportfolio/CI_PP4_Pic_Pals/tree/main) as inspiration for some of the features and layout of my website, and for my README.
+- The [Wade Williams](https://wadewilliams.com/software/generating-erd-for-django-applications/) blog helped me create the entity realtionship diagrams.
+- I referenced Alan Bushell's PP4 [La Cocina del Diablo](https://github.com/Alan-Bushell/la-cocina-del-diablo) README for help developing my own README.
 
 ### Acknowledgements
 - My Mentor Chris Quinn for continuous helpful feedback.
