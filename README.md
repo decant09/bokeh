@@ -1200,14 +1200,14 @@ The site was deployed to Heroku and the following steps were followed to do so:
 The steps below describe how to fork or clone the repository if desired.
 #### How to Fork
 1. Log in to Github.
-2. Navigate to the [repository](https://github.com/decant09/learn-the-lingo-quiz) for this website.
+2. Navigate to the [repository](https://github.com/decant09/bokeh) for this website.
 3. Click the Fork button in the top right corner.
 4. You will be brought to a new page with a short form to be completed.
 5. Upon completing, click on the "Create fork" button and this will create a fork of the repository in your personal account.
 
 #### How to Clone
 1. Log in to GitHub.
-2. Navigate to the [repository](https://github.com/decant09/learn-the-lingo-quiz) for this website.
+2. Navigate to the [repository](https://github.com/decant09/bokeh) for this website.
 3. Click on the Code button and a modal will appear.
 4. Within this modal select the local tab.
 5. Within this tab there are HTTPS, SSH, or GitHub CLI tabs.
