@@ -41,6 +41,7 @@ DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
     'localhost',
+    '127.0.0.1',
     '8000-decant09-bokeh-5uqojukqxd.us2.codeanyapp.com',
     'decant09-bokeh-photo-blog-0c5a394f8c26.herokuapp.com',
 ]
