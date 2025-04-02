@@ -14,8 +14,15 @@ from pathlib import Path
 import os
 from django.contrib.messages import constants as messages
 import dj_database_url
-if os.path.isfile("env.py"):
-    import env
+
+# if os.path.isfile("env.py"):
+#     import env
+
+import environ
+
+env = environ.Env()
+environ.Env.read_env()  # Reads the .env file
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,12 +33,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'default_secret_key_for_dev')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+
 
 ALLOWED_HOSTS = [
+    'localhost',
     '8000-decant09-bokeh-5uqojukqxd.us2.codeanyapp.com',
     'decant09-bokeh-photo-blog-0c5a394f8c26.herokuapp.com',
 ]
@@ -107,8 +116,12 @@ WSGI_APPLICATION = 'bokeh_photography.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.parse(env('DATABASE_URL'))
 }
+
+# DATABASES = {
+#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+# }
 
 # DATABASES = {
 #     'default': {
