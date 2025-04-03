@@ -14,10 +14,6 @@ from pathlib import Path
 import os
 from django.contrib.messages import constants as messages
 import dj_database_url
-
-# if os.path.isfile("env.py"):
-#     import env
-
 import environ
 
 env = environ.Env()
@@ -119,17 +115,6 @@ WSGI_APPLICATION = 'bokeh_photography.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(env('DATABASE_URL'))
 }
-
-# DATABASES = {
-#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-# }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 
 # Password validation
